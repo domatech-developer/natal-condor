@@ -1,0 +1,276 @@
+.prizes {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+
+  @include resize(padding-top, 0, 40);
+  @include resize(padding-bottom, 80);
+  @include resize(padding-inline, 80, 16);
+
+  @include res-md {
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @include resize(flex-direction, row, column);
+    @include resize(gap, 73, 24);
+    @include max-width(959);
+  }
+
+  &__stickyContainer {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include resize(height, 340, auto);
+    @include resize(top, 200);
+  }
+
+  &__button {
+   background: #D10000;
+    font-weight: 600 !important;
+    @include resize(padding-inline, 32,16);
+    @include resize(line-height, 20);
+    @include resize(max-width, 169, 100%);
+    @include resize(height, 40);
+    @include resize(margin-top, 25, 16);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    & span {
+        @include resize(font-size, 14);
+        @include resize(line-height, 20);
+        text-transform: uppercase;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        @include resize(height, 100%);
+        display: block;
+        background-image: url('/assets/btn-hover.webp');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        transition: 0.3s ease-in-out;
+        z-index: 0;
+        transform: translateY(50px);
+    }
+
+    &::after {
+        @include resize(bottom, 0);
+        @include resize(left, 0);
+    }
+
+    &::before {
+        @include resize(top, 0);
+        @include resize(right, 0);
+        transform: rotate(-180deg) translateY(50px);
+    }
+
+    &:hover::after {
+        transform: translateY(0);
+    }
+
+    &:hover::before {
+        transform: rotate(-180deg) translateY(0);
+    }
+  }
+
+  &__textContainer {
+    position: relative;
+    width: 100%;
+    @include resize(min-width, 346, unset);
+    @include resize(padding-top, 150, 0);
+    @include resize(margin-bottom, 30, 0);
+  }
+
+  &__lightBg {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    display: block;
+    border-radius: 828px;
+    mix-blend-mode: soft-light;
+    background: url("/images/Ellipse-1.svg") no-repeat center / cover;
+
+    filter: blur(50px);
+
+    @include resize(max-height, 496, 250);
+    @include resize(max-width, 828, 200);
+  }
+
+  &__text {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.3rem;
+    letter-spacing: -0.12rem;
+    white-space: pre;
+    @include resize(top, 50);
+
+    span {
+      color: $color-white;
+    }
+
+    @include res-md {
+      font-size: 2rem;
+      line-height: 2.4rem; /* 38.4px */
+      letter-spacing: -0.08rem;
+    }
+  }
+
+  &__balloonContainer {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 17/44;
+    @include resize(max-width, 125);
+    @include resize(top, -40, -56);
+    @include resize(left, -260, 200);
+    animation: floatY 5s infinite ease-in-out;
+    &:nth-child(2) {
+      animation: floatY 4s infinite ease-in-out;
+      animation-delay: 0.5s;
+    }
+    &--mod {
+      transform: rotate(-3.477deg);
+      z-index: 2;
+      @include resize(top, 56, 40);
+      @include resize(left, -220, 245);
+      @include resize(max-width, 106);
+    }
+  }
+
+  &__cardContainer {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    @include resize(gap, 16);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      position: sticky;
+      top: 0;
+      z-index: 9;
+      background: linear-gradient(180deg, purble 0%, #00000000 100%);
+      @include resize(height, 80, 0);
+
+      @include res-md {
+        display: none;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    width: 100%;
+    aspect-ratio: 561 / 414;
+    @include resize(gap, 37, 24);
+    @include resize(padding, 32, 16);
+
+    &--mod {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+
+  &__textImg {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__textCardContainer {
+    @include resize(max-width, 167, 100);
+  }
+
+  &__cardText {
+    color: #151514;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    letter-spacing: -0.06rem;
+    white-space: pre;
+
+    & strong {
+      font-weight: 900;
+    }
+
+    @include res-md {
+      font-size: 1rem;
+      line-height: 1.2rem;
+      letter-spacing: -0.02rem;
+    }
+
+    &--mod {
+      & strong {
+        font-weight: 700;
+        letter-spacing: -0.06rem;
+      }
+    }
+  }
+
+  &__imgCarContainer {
+    aspect-ratio: 103/37;
+    width: 100%;
+    @include resize(max-width, unset, 320);
+    @include resize(margin-bottom, -20);
+    &--mod {
+      @include resize(margin-bottom, unset);
+      aspect-ratio: 165/59;
+      max-width: unset;
+    }
+  }
+
+  &__imgContainer {
+    aspect-ratio: 447/253;
+    width: 100%;
+
+    @include res-md {
+      aspect-ratio: 256/145;
+    }
+
+    &--mod {
+      width: 100%;
+      aspect-ratio: unset;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    &--primary {
+      @include resize(padding, 12);
+    }
+
+    &--secondary {
+      aspect-ratio: 278 / 257;
+      @include resize(max-width, 278);
+      @include resize(max-height, 257);
+    }
+  }
+}

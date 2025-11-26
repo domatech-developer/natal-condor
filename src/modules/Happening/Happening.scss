@@ -1,0 +1,15 @@
+.happening {
+    @include resize(padding-top, 137);
+    position: relative;
+
+    &__title {
+        text-align: center;
+        @include resize(font-size, 40, 24);
+        @include resize(line-height, 50, 32);
+        font-weight: 700;
+        background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

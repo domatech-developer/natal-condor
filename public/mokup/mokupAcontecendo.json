@@ -1,0 +1,26 @@
+{
+  "heading": "Veja tudo o quê está <br /> acontecendo no Condor",
+  "cards": [
+    {
+      "imageSrc": "/images/card-example.webp",
+      "title": "Volta às aulas",
+      "description": "Lorem ipsum dolor sit amet consectetur. Ut morbi pharetra viverra felis sit eu neque malesuada. Ipsum ultricies a non turpis vel. Ornare felis leo aenean dui. Aliquam tincidunt amet odio nulla.",
+      "buttonText": "Saiba mais",
+      "link": "#"
+    },
+    {
+      "imageSrc": "/images/card-example.webp",
+      "title": "Promoções imperdíveis",
+      "description": "Descontos exclusivos em produtos selecionados para você aproveitar ao máximo.",
+      "buttonText": "Confira",
+      "link": "#"
+    },
+    {
+      "imageSrc": "/images/card-example.webp",
+      "title": "Novidades da semana",
+      "description": "Fique por dentro dos lançamentos mais recentes e atualizados do catálogo.",
+      "buttonText": "Ver novidades",
+      "link": "#"
+    }
+  ]
+}

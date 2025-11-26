@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "acontecendoNoCondor": {
+      "title": "Acontecendo no Condor",
+      "links": [
+        { "label": "Volta às aulas", "url": "/volta-as-aulas" },
+        { "label": "Novas Lojas", "url": "/novas-lojas" },
+        { "label": "Prova Social", "url": "/prova-social" }
+      ]
+    },
+    "nossosSites": {
+      "title": "Nossos sites",
+      "links": [
+        { "label": "Condor em Casa", "url": "https://condoremcasa.com.br" },
+        { "label": "Condor Eletro", "url": "https://condoreletro.com.br" },
+        { "label": "Institucional", "url": "/institucional" }
+      ]
+    },
+    "outros": {
+      "title": "Outros",
+        "links": [
+            { "label": "Regulamento", "url": "/regulamento" },
+            { "label": "Política de privacidade", "url": "/politica-de-privacidade" },
+            { "label": "Fale conosco", "url": "/fale-conosco" }
+        ]
+    },
+    "nossasRedes": {
+      "title": "Nossas redes",
+      "icons": [
+        { "image": "/icons/facebook.svg", "label": "Rede social Facebook", "url": "https://www.facebook.com/RedeCondor/" },
+        { "image": "/icons/instagram.svg", "label": "Rede social Instagram", "url": "https://www.instagram.com/redecondor/" },
+        { "image": "/icons/tiktok.svg", "label": "Rede social TikTok", "url": "https://www.tiktok.com/@redecondor?lang=pt-BR" },
+        { "image": "/icons/youtube.svg", "label": "Rede social YouTube", "url": "https://www.youtube.com/@redecondor" },
+        { "image": "/icons/linkedin.svg", "label": "Rede social LinkedIn", "url": "https://br.linkedin.com/company/redecondor" }
+      ]
+    }
+  },
+  "legal": {
+    "text": "<p>Poderá participar desta campanha promocional qualquer consumidor que efetuar uma compra de R$50,00 nas lojas Condor no período de 15/02/2025 a 13/02/2026, pessoa física, maior de 18 anos, que possua cadastro atualizado no Clube Condor a partir de 01/01/2025, com CPF e número de celular válido, e que tenha confirmado sua participação por meio de SMS, WhatsApp, site, aplicativo ou e-mail. Promoção autorizada pela SPA/MF nº 04.039861/2025. Imagens meramente ilustrativas.</p>"
+  },
+  "copyright": "<p>Copyright © 2025 Condor, todos os direitos reservados.</p>",
+  "by": {
+    "image": "/images/logo-grupojob.webp",
+    "url": "https://www.jobspace.com.br",
+    "alt": "logo da Job Space"
+  },
+  "logo": {
+    "src": "/images/logo-rede-condor.webp",
+    "alt": "Logo Rede Condor",
+    "width": 195,
+    "height": 52
+  }
+}

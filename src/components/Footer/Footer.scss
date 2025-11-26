@@ -1,0 +1,171 @@
+.footer {
+  position: relative;
+  background: linear-gradient(180deg, rgba(191, 206, 217, 0.00) 0%, #BFCED9 31.3%, #BFCED9 100%);
+  margin-top: 100px;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @include resize(padding-inline, 80, 16);
+    @include resize(padding-top, 80, 40);
+    @include max-width(1366);
+    margin-inline: auto;
+  }
+
+  &::before {
+    content: "";
+    @include resize(width, 100%);
+    @include resize(min-height, 425);
+    aspect-ratio: 1366 / 425;
+    display: block;
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/assets/details_footer.webp);
+    position: absolute;
+    top: -200px;
+    @include resize(top, -200px);
+    @include resize(left, 0);
+    z-index: -1;
+  }
+
+  &__links {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__link {
+    color: $color-black;
+    font-weight: 700;
+    @include resize(padding-bottom, 10);
+  }
+
+  &__ListCard {
+    @include res-md {
+      padding-bottom: 20px;
+    }
+  }
+  &__ListCard:last-child {
+    @include res-md {
+      @include resize(width, 100%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__linkIcon {
+    @include resize(width, 24);
+    @include resize(height, 24);
+  }
+
+  &__list_link_sociais {
+    @include resize(width, 32);
+    @include resize(height, 32);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.1s ease-out;
+
+    img {
+      transition: 0.3s;
+    }
+
+    &:hover{
+      background-color: #687a88;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  &__copy {
+    color: #0C2A43;
+    width: 100%;
+    @include resize(padding-bottom, 8);
+  }
+
+  &__containerFlex {
+    @include resize(width, 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include resize(margin-top, 32, 16);
+    @include resize(margin-bottom, 16, 8);
+    @include resize(padding-top, 32, 16);
+    border-top: 1px solid rgba(12, 42, 67, 0.20);
+
+    h3 {
+      color: #0C2A43;
+      @include resize(font-size, 14);
+      @include resize(line-height, 24);
+      @include resize(margin-bottom, 12);
+      font-weight: 700;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      @include resize(gap, 8);
+
+      a {
+        display: block;
+        width: 100%;
+        @include resize(padding-top, 8);
+        @include resize(padding-bottom, 8);
+        color: #0C2A43;
+        @include resize(font-size, 14);
+        @include resize(line-height, 24);
+        font-weight: 500;
+      }
+    }
+  }
+
+
+  &__copyTitle {
+    p {
+      @include resize(margin-bottom, 16);
+      color: rgba(12, 42, 67, 0.72);
+      font-weight: 400;
+      @include resize(font-size, 10);
+      @include resize(line-height, 16px);
+      letter-spacing: -0.2px;
+    }
+  }
+
+  &__domaContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include resize(gap, 8);
+    @include resize(margin-top, 8);
+    @include resize(padding-top, 8);
+    border-top: 1px solid rgba(12, 42, 67, 0.20);
+  }
+
+  &__doma {
+    color: #0C2A43;
+    @include resize(font-size, 10);
+    @include resize(line-height, 1.6);
+  }
+
+  &__domaIcon {
+    @include resize(width, 51);
+    @include resize(height, 24);
+    aspect-ratio: 17/8;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__list_sociais {
+    @include resize(gap, 8);
+    flex-direction: row !important;
+  }
+}

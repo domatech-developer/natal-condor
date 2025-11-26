@@ -1,0 +1,49 @@
+#home {
+    .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .bg_natal {
+        background-image: url('/assets/background-natal.webp');
+        background-size: contain;
+        background-color: #77201C;
+
+        .bg_flocoNeve {
+            position: absolute;
+            background: url('/assets/neve.webp') no-repeat center center;
+            background-size: contain;
+            @include resize(left,0);
+            @include resize(top,60);
+            @include resize(width,140);
+            @include resize(height,140);
+            aspect-ratio: 1/1;
+            
+            @include res-md {
+                display: none;
+            }
+        }
+
+        .bg-item--flocoNeve0 {
+            @include resize(left,-30);
+        }
+
+        .bg-item--flocoNeve1 {
+            @include resize(left,-20);
+            @include resize(top,165);
+            @include resize(width,95);
+            @include resize(height,95);
+        }
+
+        .bg-item--flocoNeve2 {
+            @include resize(left,44);
+            @include resize(top,140);
+            @include resize(width,100);
+            @include resize(height,100);
+        }
+    }
+}
