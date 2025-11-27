@@ -5,6 +5,7 @@ import Happening from "@/modules/Happening/Happening";
 import Clube from "@/modules/Clube/Clube" 
 import Prizes from "@/modules/Prizes/Prizes";
 import "./Home.scss";
+import Podium from "@/modules/Podium/Podium";
 
 interface HomeProps {
   data?: any;
@@ -16,6 +17,8 @@ const Home: FC<HomeProps> = async ({ data, page }) => {
   return (
     <MainDefault id="home">
       <StructureData data={data?.acf?.metaDados} />
+      <Prizes />
+      <Podium />
       
       <div className="bg_natal">
         {flocoNeves.map((_, i) => (
@@ -27,7 +30,6 @@ const Home: FC<HomeProps> = async ({ data, page }) => {
 
         <Happening />
         <Clube />
-        <Prizes />
       </div>
 
     </MainDefault>

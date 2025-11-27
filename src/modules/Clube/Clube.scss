@@ -11,9 +11,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    @include max-width(1080);
+    @include max-width(1266);
     @include resize(flex-direction, row, column);
-    @include resize(gap, 0, 32);
+    @include resize(gap, 80, 32);
   }
 
   &__infoContainer {

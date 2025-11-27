@@ -4,8 +4,9 @@
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  background-color: #000;
 
-  @include resize(padding-top, 0, 40);
+  @include resize(padding-top, 0, 120);
   @include resize(padding-bottom, 80);
   @include resize(padding-inline, 80, 16);
 
@@ -14,13 +15,25 @@
     overflow: hidden;
   }
 
+  &__bgvideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: -1;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   &__container {
     display: flex;
     justify-content: center;
     width: 100%;
     @include resize(flex-direction, row, column);
-    @include resize(gap, 73, 24);
-    @include max-width(959);
+    @include resize(gap, 24);
+    @include max-width(1266);
   }
 
   &__stickyContainer {
@@ -28,9 +41,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
     @include resize(height, 340, auto);
     @include resize(top, 200);
+    @include resize(align-items,flex-start, center);
+    @include resize(text-align, left, center);
   }
 
   &__button {
@@ -115,21 +131,17 @@
   }
 
   &__text {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 3.3rem;
-    letter-spacing: -0.12rem;
-    white-space: pre;
-    @include resize(top, 50);
+    @include resize(font-size, 40, 24);
+    @include resize(line-height, 50, 32);
+    color: #fff;
+    font-weight: 500;
 
-    span {
-      color: $color-white;
-    }
-
-    @include res-md {
-      font-size: 2rem;
-      line-height: 2.4rem; /* 38.4px */
-      letter-spacing: -0.08rem;
+    & span {
+      background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+      background-clip: text;
+      font-weight: 700;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 
@@ -160,21 +172,22 @@
     flex-direction: column;
     z-index: 3;
     @include resize(gap, 16);
+    @include resize(width, 85%, 100%);
 
-    &::before {
-      content: "";
-      position: absolute;
-      display: block;
-      position: sticky;
-      top: 0;
-      z-index: 9;
-      background: linear-gradient(180deg, purble 0%, #00000000 100%);
-      @include resize(height, 80, 0);
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   display: block;
+    //   position: sticky;
+    //   top: 0;
+    //   z-index: 9;
+    //   background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+    //   @include resize(height, 80, 0);
 
-      @include res-md {
-        display: none;
-      }
-    }
+    //   @include res-md {
+    //     display: none;
+    //   }
+    // }
   }
 
   &__card {
