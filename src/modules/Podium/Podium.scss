@@ -1,11 +1,51 @@
+$time: 1.56s;
+
 .podium {
     position: relative;
-    overflow: hidden;
-    @include resize(padding-top, 105, 60);
+    z-index: 0;
+    @include resize(padding-top, 105, 50);
     background-image: url('/assets/background-podium.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    &::after {
+        content: '';
+        position: absolute;
+        @include resize(top, 0,-49);
+        @include resize(right, 0);
+        @include resize(width, 289, 100%);
+        @include resize(height, 185, 120);
+        background-image: url('/assets/mais-matos-natalinos-4.webp');
+        background-repeat: no-repeat;
+        @include resize(background-size, contain, cover);
+        background-position: right;
+        z-index: 4;
+
+        @include res-md {
+            background-image: url('/assets/festin-natal-mobile.webp');
+            background-position: center;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        @include resize(bottom, 0,-49);
+        @include resize(left, 0);
+        @include resize(width, 289, 100%);
+        @include resize(height, 185, 120);
+        background-image: url('/assets/mais-matos-natalinos-2.webp');
+        background-repeat: no-repeat;
+        @include resize(background-size, contain, cover);
+        background-position: left;
+        z-index: 4;
+
+        @include res-md {
+            background-image: url('/assets/festin-natal-mobile.webp');
+            background-position: center;
+        }
+    }
 
     &__imgContainer {
         position: relative;
@@ -20,9 +60,7 @@
             height: 100%;
             object-fit: contain;
             object-position: bottom;
-            transition: 0.45s ease-in-out;
         }
-       
     }
 
     &__imgProducts {
@@ -32,13 +70,82 @@
         object-fit: cover !important;
         object-position: top !important;
         margin-inline: auto !important;
-        @include resize(margin-bottom, -70, -55);
+        @include resize(margin-bottom, -70, -110);
+        transform: translateY(50px) scale(0);
 
+        & img {
+            opacity: 0;
+            transition: opacity $time ease-in-out $time * 2.75;
+        }
+
+        @include res-md {
+            transform: translateY(25px) scale(0);
+        }
+    }
+
+    &__imgPodium {
+        transition: 0.35s ease-in-out;
+        transform: translateY(50%);
+        @include resize(bottom, 0, -40);
+
+        & img {
+            transition: opacity $time ease-in-out $time * 1.5;
+        }
+    }
+
+    &__imgSelo {
+        z-index: 2;
+        @include resize(bottom, 100, 40);
+        @include resize(left, -60, 0);
+        @include resize(width, auto, 100%);
+        position: absolute;
+        transition: transform $time ease-in-out $time;
+        transform: scale(0);
+
+        & img {
+            @include resize(height, 293, 223);
+        }
+    }
+
+    &.active {
+        & .podium__imgProducts {
+            transform: translateY(0) scale(1);
+
+            & img {
+                opacity: 1;
+                transition: opacity 0.35s ease-in-out 0.35s;
+            }
+        }
+        & .podium__imgPodium {
+            transform: translateY(0);
+        }
+
+        & .podium__imgSelo {
+            transform: scale(1);
+        }
     }
 
     &__container {
         @include resize(max-width, 1266, 100%);
         @include resize(padding-inline, 0, 15);
         margin-inline: auto;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include resize(width, 289, 100%);
+            @include resize(height, 185, 99);
+             background-image: url('/assets/mais-matos-natalinos-3.webp');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+            z-index: 1;
+
+            @include res-md {
+                display: none;
+            }
+        }
     }
 }

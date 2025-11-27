@@ -1,18 +1,15 @@
 import "@/scss/main.scss";
 import { Metadata } from "next";
 import QueryProvider from "@/provider/QueryProvider/QueryProvider";
-import GsapProvider from "@/provider/GsapProvider/GsapProvider";
 import Footer from "@/components/Footer/Footer";
 
 export const metadata: Metadata = {
   title: "Natal Condor - Promoção de Natal",
-  description:
-    "lorem ipsum dolro sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  description: "",
   metadataBase: new URL("https://www.condor.com.br/"),
   openGraph: {
     title: "Natal Condor - Promoção com Prêmios",
-    description:
-      "lorem ipsum dolro sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    description: ".",
     url: "https://www.condor.com.br/",
     images: [{ url: "/icon.png", width: 582, height: 158, alt: "Natal Condor" }]
   },
@@ -26,9 +23,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="pt-Br">
       <body>
         <QueryProvider>
-          <GsapProvider>
             {children}
-          </GsapProvider>
           <Footer />
         </QueryProvider>
       </body>

@@ -1,0 +1,28 @@
+{
+  "backgroundVideo": "/assets/background-luz-natal-condor.mp4",
+  "title": "<span>Prêmios imperdíveis <br /> esperam você</span>. O próximo <br /> pode ser o seu.",
+  "button": {
+    "url": "#",
+    "title": "Ver ofertas",
+    "target": "_blank",
+    "name": "Ver ofertas"
+  },
+  "prizes": [
+    {
+      "image": "/images/condor_natalino.png",
+      "alt": "Prêmio 1"
+    },
+    {
+      "image": "/images/condor_natalino.png",
+      "alt": "Prêmio 2"
+    },
+    {
+      "image": "/images/condor_natalino.png",
+      "alt": "Prêmio 3"
+    },
+    {
+      "image": "/images/condor_natalino.png",
+      "alt": "Prêmio 4"
+    }
+  ]
+}

@@ -46,12 +46,12 @@
     @include resize(height, 340, auto);
     @include resize(top, 200);
     @include resize(align-items,flex-start, center);
+    @include resize(line-height, 100%);
     @include resize(text-align, left, center);
   }
 
   &__button {
    background: #D10000;
-    font-weight: 600 !important;
     @include resize(padding-inline, 32,16);
     @include resize(line-height, 20);
     @include resize(max-width, 169, 100%);
@@ -66,9 +66,10 @@
     z-index: 1;
 
     & span {
-        @include resize(font-size, 14);
-        @include resize(line-height, 20);
-        text-transform: uppercase;
+      @include resize(font-size, 14);
+      @include resize(line-height, 20);
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     &::before,
@@ -110,7 +111,7 @@
     position: relative;
     width: 100%;
     @include resize(min-width, 346, unset);
-    @include resize(padding-top, 150, 0);
+    @include resize(padding-top, 220, 0);
     @include resize(margin-bottom, 30, 0);
   }
 
@@ -172,7 +173,8 @@
     flex-direction: column;
     z-index: 3;
     @include resize(gap, 16);
-    @include resize(width, 85%, 100%);
+    @include resize(padding-top, 200, 0);
+    @include resize(width, 100%);
 
     // &::before {
     //   content: "";

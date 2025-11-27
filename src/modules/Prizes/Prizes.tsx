@@ -2,6 +2,7 @@ import { FC } from "react";
 import TextDefault from "@/components/TextDefault/TextDefault";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
+import mokup from "public/mokup/mokupPrizes.json"
 import "./Prizes.scss";
 
 const Prizes: FC = () => {
@@ -15,7 +16,7 @@ const Prizes: FC = () => {
         playsInline
         aria-hidden="true"
       >
-        <source src="/assets/background-luz-natal-condor.mp4" type="video/mp4" />
+        <source src={mokup.backgroundVideo} type="video/mp4" />
       </video>
 
       <div className="prizes__container">
@@ -23,45 +24,34 @@ const Prizes: FC = () => {
           <div className="prizes__stickyContainer">
             <TextDefault
               className="prizes__text"
-              text={`<span>Prêmios imperdíveis <br /> esperam você</span>. O próximo <br /> pode se o seu.`}
+              text={mokup.title}
             />
             <ButtonLink
               className="prizes__button"
               linkProps={{
-                url: "#",
-                title: "Ver ofertas",
-                target: "_blank",
-                name: "Ver ofertas"
+                url: mokup.button.url,
+                title: mokup.button.title,
+                target: mokup.button.target,
+                name: mokup.button.name
               }}
             />
           </div>
         </div>
+
         <div className="prizes__cardContainer">
-          <div className="prizes__card">
-            <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-              <ImgDefault className="prizes__img" src={"/images/condor_natalino.png"} alt={"Prêmio"} />
+          {mokup.prizes.map((item, i) => (
+            <div key={i} className="prizes__card">
+              <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
+                <ImgDefault
+                  className="prizes__img"
+                  src={item.image}
+                  alt={item.alt}
+                />
+              </div>
             </div>
-          </div>
-
-          <div className="prizes__card">
-            <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-              <ImgDefault className="prizes__img" src={"/images/condor_natalino.png"} alt={"Prêmio"} />
-            </div>
-          </div>
-
-          <div className="prizes__card">
-            <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-              <ImgDefault className="prizes__img" src={"/images/condor_natalino.png"} alt={"Prêmio"} />
-            </div>
-          </div>
-
-          <div className="prizes__card">
-            <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-              <ImgDefault className="prizes__img" src={"/images/condor_natalino.png"} alt={"Prêmio"} />
-            </div>
-          </div>
-
+          ))}
         </div>
+        
       </div>
     </section>
   );

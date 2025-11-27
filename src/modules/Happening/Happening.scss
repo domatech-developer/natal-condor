@@ -1,6 +1,20 @@
 .happening {
-    @include resize(padding-top, 137);
+    @include resize(padding-top, 174, 60);
     position: relative;
+
+    &::after {
+        content: '';
+        @include resize(width,100%);
+        @include resize(height, 200, 65);
+        background-image: url('/assets/faixa-natal.webp');
+        display: block;
+        position: absolute;
+        @include resize(top, -60, -30);
+        @include resize(left, 0);
+        z-index: 1;
+        background-position: center center;
+        background-size: contain;
+    }
 
     &__title {
         text-align: center;

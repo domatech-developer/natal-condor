@@ -4,8 +4,10 @@ import StructureData from "@/components/SEO/StructureData/StructureData";
 import Happening from "@/modules/Happening/Happening";
 import Clube from "@/modules/Clube/Clube" 
 import Prizes from "@/modules/Prizes/Prizes";
-import "./Home.scss";
 import Podium from "@/modules/Podium/Podium";
+import Participate from "@/modules/Participate/Participate";
+import "./Home.scss";
+
 
 interface HomeProps {
   data?: any;
@@ -17,7 +19,9 @@ const Home: FC<HomeProps> = async ({ data, page }) => {
   return (
     <MainDefault id="home">
       <StructureData data={data?.acf?.metaDados} />
+
       <Prizes />
+      <Participate />
       <Podium />
       
       <div className="bg_natal">
