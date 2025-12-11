@@ -182,7 +182,6 @@
     border-radius: 16px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     width: 100%;
-    aspect-ratio: 561 / 414;
     @include resize(gap, 37, 24);
     @include resize(padding, 32, 16);
     transition: transform 0.5s ease, opacity 0.5s ease;

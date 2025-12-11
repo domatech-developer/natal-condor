@@ -1,0 +1,49 @@
+.banner {
+    position: relative;
+    z-index: 0;
+    @include resize(padding-top, 76, 42);
+    @include resize(padding-bottom, 76, 42);
+    background-image: url('/images/banner-natal-homepage.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__grid {
+        display: grid;
+        @include resize(grid-template-columns, 1fr 1fr, 1fr);
+    }
+
+    &__titlePage {
+        @include resize(width, 632, 354);
+        @include resize(height, 333, 187);
+    }
+
+    &__logo {
+        position: relative;
+        @include resize(width, 270, 151);
+        @include resize(height, 61, 47);
+        @include resize(top, -45);
+        @include resize(right, 30);
+    }
+
+    &__listImages {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__imgPresent {
+        position: relative;
+        @include resize(width, 356, 224);
+        @include resize(height, 126, 79);
+        @include resize(top, -40);
+        @include resize(left, -20);
+    }
+
+    &__container {
+        @include resize(width, 100%);
+        @include max-width(1466);
+        @include resize(margin-inline, auto);
+    }
+
+}

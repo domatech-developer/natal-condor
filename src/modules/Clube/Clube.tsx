@@ -28,7 +28,7 @@ const Clube: FC = () => {
         </div>
 
         <div className="clube__imgContainer">
-          <ImgDefault className="clube__img" src={mokup.image.src} alt={mokup.image.alt} />
+          <ImgDefault className="clube__img" src={mokup.image.src} alt={mokup.image.alt} quality={75} />
         </div>
       </div>
     </section>

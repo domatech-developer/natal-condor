@@ -4,7 +4,7 @@ import { ButtonVariants } from "@/@types/variants";
 import LinkDefault, { LinkDefaultProps } from "@/components/LinkDefault/LinkDefault";
 import "./ButtonLink.scss";
 
-type ButtonLinkProps = Omit<LinkDefaultProps, "href"> & {
+type ButtonLinkProps = {
   linkProps: { url?: string; title?: string; target?: string; name: string };
   variant?: ButtonVariants;
   disabled?: boolean;
@@ -12,7 +12,7 @@ type ButtonLinkProps = Omit<LinkDefaultProps, "href"> & {
   iconLeft?: Icons;
   iconRight?: Icons;
   active?: boolean;
-};
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type">;
 
 const ButtonLink: FC<ButtonLinkProps> = ({
   linkProps,
@@ -24,29 +24,56 @@ const ButtonLink: FC<ButtonLinkProps> = ({
   active = false,
   ...props
 }) => {
-  if (!linkProps?.url) return null;
+  const classes = `buttonLink buttonLink__${variant}
+    ${circular ? "buttonLink--circular" : ""}
+    ${disabled ? `buttonLink__${variant}--disabled` : ""}
+    ${active ? `buttonLink__${variant}--active` : ""}
+  `.replace(/\s+/g, " ").trim();
 
-  return (
-    <LinkDefault
-      className={`buttonLink buttonLink__${variant} ${circular && `buttonLink--circular`} 
-      ${!!disabled && `buttonLink__${variant}--disabled`} ${!!active && `buttonLink__${variant}--active`}`}
-      target={linkProps?.target}
-      title={linkProps?.name}
-      href={linkProps?.url ?? "#"}
-      {...props}
-    >
+  const content = (
+    <>
       {!!iconLeft && (
         <div className="buttonLink__iconContainer">
-          <img className="buttonLink__icon" src={`/icons/${iconLeft}.svg`} alt={iconRight} />
+          <img className="buttonLink__icon" src={`/icons/${iconLeft}.svg`} alt="" />
         </div>
       )}
-      {!!linkProps?.title && <span className={`buttonLink__text buttonLink__text--${variant}`}>{linkProps?.title}</span>}
+
+      {!!linkProps?.title && (
+        <span className={`buttonLink__text buttonLink__text--${variant}`}>
+          {linkProps.title}
+        </span>
+      )}
+
       {!!iconRight && (
         <div className="buttonLink__iconContainer">
-          <img className="buttonLink__icon" src={`/icons/${iconRight}.svg`} alt={iconRight} />
+          <img className="buttonLink__icon" src={`/icons/${iconRight}.svg`} alt="" />
         </div>
       )}
-    </LinkDefault>
+    </>
+  );
+
+  if (linkProps?.url) {
+    return (
+      <LinkDefault
+        className={classes}
+        href={linkProps.url}
+        title={linkProps.name}
+        target={linkProps.target}
+      >
+        {content}
+      </LinkDefault>
+    );
+  }
+
+  return (
+    <button
+      className={classes}
+      type="button"
+      disabled={disabled}
+      {...props}
+    >
+      {content}
+    </button>
   );
 };
 

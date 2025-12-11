@@ -53,6 +53,7 @@ const Prizes: FC = () => {
                     className="prizes__img"
                     src={item.image}
                     alt={item.alt}
+                    quality={75}
                   />
                 </div>
               </div>

@@ -1,0 +1,166 @@
+.events {
+    position: relative;
+    @include resize(padding-top, 96, 40);
+    @include resize(padding-bottom, 80, 40);
+
+    &__cardCarousel {
+        background: #1E271B;
+        @include resize(padding, 24);
+        border-radius: 8px;
+    }
+
+    &__imageCardCarousel {
+        @include resize(width, 100%);
+        @include resize(height, 220);
+        object-fit: contain;
+    }
+
+    &__cardCarrosselContainer_image {
+        @include resize(margin-top, 20);
+        @include resize(margin-bottom, 20);
+    }
+    
+    &__cardCarousel_title {
+        @include resize(font-size, 16, 14);
+        @include resize(line-height, 24);
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        @include resize(margin-bottom, 12);
+    }
+
+    &__buttonCard {
+        cursor: pointer;
+        @include resize(width, 100%);
+        @include resize(max-width, 100%);
+        background: #D10000;
+        @include resize(padding-inline, 32,16);
+        @include resize(line-height, 20);
+        @include resize(height, 40);
+        @include resize(margin-top, 25, 16);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:hover::after {
+            transform: translateY(0);
+        }
+
+        &:hover::before {
+            transform: rotate(-180deg) translateY(0);
+        }
+    }
+    .cardDefault__button {
+        @include resize(max-width, 100%);
+    }
+
+    .carouselDefault {
+        @include resize(--slide-size, 344, 95%);
+        @include resize(--slide-spacing, 8);
+
+        .carouselDefault__button {
+            max-width: 100%;
+            border-color: #fff;
+            &:hover {
+                border-color: gold;
+                background: transparent;
+            }
+        }
+
+        .carouselDefault__button--next {
+            @include resize(right, 0, 0);
+        }
+        .carouselDefault__button--prev {
+            @include resize(left, 0, 0);
+        }
+    }
+    .podiumModalContent__description {
+        @include resize(font-size, 14);
+        @include resize(line-height, 24, 20);
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    &__titleContainer {
+        display: flex;
+        flex-direction: column;
+        @include max-width(766);
+        @include resize(margin-inline, auto);
+        @include resize(margin-bottom, 40, 25);
+        @include resize(gap,8);
+    }
+
+    &__title {
+        text-align: center;
+        @include resize(font-size, 40, 24);
+        @include resize(line-height, 50, 32);
+        font-weight: 700;
+        background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transform: translateY(-150px) scale(0.90);
+        transition-delay: .5s; 
+        opacity: 0;
+        transition: opacity .6s ease .5s, transform .6s ease .5s;
+
+        @include res-md {
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    &__description {
+        text-align: center;
+        @include resize(font-size, 18, 16);
+        @include resize(line-height, 32, 24);
+        color: #FFFFFF;
+        font-weight: 400;
+        transform: scale(0.95);
+        transition-delay: 1.35s;
+        transition: opacity .4s ease 1.35s,transform .6s ease 1.35s;
+
+        @include res-md {
+            transform: scale(1);
+        }
+    }
+
+    &__container {
+        @include resize(max-width, 1366, 100%);
+        @include resize(padding-inline, 0, 15);
+        margin-inline: auto;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            @include resize(width, 289, 100%);
+            @include resize(height, 185, 99);
+             background-image: url('/assets/mais-matos-natalinos-3.webp');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: right;
+            z-index: -1;
+
+            @include res-md {
+                display: none;
+            }
+        }
+    }
+
+        &.active {
+        .events__title {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .events__description {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}

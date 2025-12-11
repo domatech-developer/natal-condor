@@ -2,27 +2,23 @@
   "backgroundVideo": "/assets/background-luz-natal-condor.mp4",
   "title": "<span>Prêmios imperdíveis <br /> esperam você</span>. O próximo <br /> pode ser o seu.",
   "button": {
-    "url": "#",
+    "url": "",
     "title": "Ver ofertas",
     "target": "_blank",
     "name": "Ver ofertas"
   },
   "prizes": [
     {
-      "image": "/images/condor_natalino.png",
-      "alt": "Prêmio 1"
+      "image": "/images/56-carros-semana.webp",
+      "alt": "imagem ilustrativa prêmio 1, 56 carros semana"
     },
     {
-      "image": "/images/condor_natalino.png",
-      "alt": "Prêmio 2"
+      "image": "/images/vale-compras-diario.webp",
+      "alt": "imagem ilustrativa prêmio 2, vale compras diário"
     },
     {
-      "image": "/images/condor_natalino.png",
-      "alt": "Prêmio 3"
-    },
-    {
-      "image": "/images/condor_natalino.png",
-      "alt": "Prêmio 4"
+      "image": "/images/vale-compras-anual.webp",
+      "alt": "imagem ilustrativa prêmio 3, vale compras anual"
     }
   ]
 }

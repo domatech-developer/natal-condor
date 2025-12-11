@@ -58,14 +58,12 @@
       position: absolute;
       display: flex;
       object-fit: contain;
-      filter: brightness(0) saturate(100%) invert(8%) sepia(9%) saturate(1268%) hue-rotate(8deg) brightness(92%)
-        contrast(94%);
       background-image: url("/icons/arrow-right.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
-      @include resize(width, 24);
-      @include resize(height, 24);
+      @include resize(width, 18);
+      @include resize(height, 18);
     }
 
     &:hover {
@@ -73,8 +71,6 @@
       background-color: $color-primary-200;
       border-color: $color-primary-200;
       &:before {
-        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(201deg) brightness(106%)
-          contrast(106%);
         background-image: url("/icons/arrow-right.svg");
       }
     }
@@ -104,29 +100,27 @@
 
   &__dots {
     position: absolute;
-    display: none;
+    // display: none;
     align-items: center;
-
-    @include res-md {
-      display: flex;
-      justify-content: center;
-      left: 0;
-      bottom: -24px;
-      width: 100%;
-      gap: 8px;
-    }
+    display: flex;
+    justify-content: center;
+    left: 0;
+    bottom: -24px;
+    width: 100%;
+    gap: 8px;
   }
 
   &__dot {
     position: relative;
-    border: 1px solid $color-gray-100;
+    border: 1px solid #fff;
     background-color: transparent;
     border-radius: 1000px;
     @include resize(width, 12);
     @include resize(height, 12);
 
     &--selected {
-      background-color: $color-gray-100;
+      background-color: #fff;
+      @include resize(width, 48);
     }
   }
 
