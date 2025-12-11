@@ -71,6 +71,24 @@ $qtdCard: 3;
         transform: translateY(100px);
         transition: opacity 0.6s, transform 0.6s ease-out;
 
+        &::after {
+            content: '';
+            display: block;
+            @include resize(width, 100%);
+            @include resize(height, 76);
+            position: absolute;
+            top: -25px;
+            left: 0;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-image: url('/assets/festao-sino.webp');
+            transform: scale(0.4);
+            opacity: 0;
+            transition: 0.5s;
+        }
+
         @include res-sm {
             opacity: 1;
             transform: translateY(0);
@@ -135,9 +153,18 @@ $qtdCard: 3;
             transform: translateY(0);
         }
 
+
         @for $i from 1 through $qtdCard {
             .participate__cardFixed:nth-child(#{$i}) {
                 transition-delay: $i * 0.35s;
+            }
+        }
+
+        @for $i from 1 through $qtdCard {
+            .participate__cardFixed:nth-child(#{$i})::after {
+                transition-delay: ($i * 0.65s) + 0.20s;
+                transform: scale(1);
+                opacity: 1;
             }
         }
 

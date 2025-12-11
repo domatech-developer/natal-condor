@@ -1,0 +1,31 @@
+{
+  "title": "Dicas de Natal!",
+  "description": "Cadastre-se gratuitamente e aproveite ofertas personalizadas, cashback em suas compras e sorteios especiais.",
+  "button": {
+    "label": "Acessar Blog",
+    "link": "/blog"
+  },
+  "carousel": [
+    {
+      "highlight": "Culinária",
+      "image": "/images/image-ilustrative.webp",
+      "title": "Receita Tradicional de Peru de Natal: Suculento e Dourado",
+      "time": "3 min",
+      "date": "Jun 27, 2025"
+    },
+    {
+      "highlight": "Culinária",
+      "image": "/images/image-ilustrative.webp",
+      "title": "Como Preparar Acompanhamentos Perfeitos para o Jantar de Natal",
+      "time": "4 min",
+      "date": "Jun 25, 2025"
+    },
+    {
+      "highlight": "Lifestyle",
+      "image": "/images/image-ilustrative.webp",
+      "title": "Ideias de Decoração para Deixar sua Ceia Ainda Mais Especial",
+      "time": "2 min",
+      "date": "Jun 20, 2025"
+    }
+  ]
+}

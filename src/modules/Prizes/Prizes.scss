@@ -124,9 +124,7 @@
     border-radius: 828px;
     mix-blend-mode: soft-light;
     background: url("/images/Ellipse-1.svg") no-repeat center / cover;
-
     filter: blur(50px);
-
     @include resize(max-height, 496, 250);
     @include resize(max-width, 828, 200);
   }
@@ -175,21 +173,6 @@
     @include resize(gap, 16);
     @include resize(padding-top, 200, 0);
     @include resize(width, 100%);
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   display: block;
-    //   position: sticky;
-    //   top: 0;
-    //   z-index: 9;
-    //   background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
-    //   @include resize(height, 80, 0);
-
-    //   @include res-md {
-    //     display: none;
-    //   }
-    // }
   }
 
   &__card {
@@ -202,14 +185,23 @@
     aspect-ratio: 561 / 414;
     @include resize(gap, 37, 24);
     @include resize(padding, 32, 16);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transform: translateY(0) scale(1);
 
     &--mod {
       flex-direction: row;
       align-items: center;
       justify-content: space-around;
     }
-  }
 
+    &.hidden-element {
+      transform: translateY(-200px) scale(0.6);
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      pointer-events: none;
+    }
+  }
+ 
   &__textImg {
     display: flex;
     align-items: flex-end;

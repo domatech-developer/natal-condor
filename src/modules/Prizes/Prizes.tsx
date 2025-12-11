@@ -1,11 +1,15 @@
+"use client";
+
 import { FC } from "react";
 import TextDefault from "@/components/TextDefault/TextDefault";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
 import mokup from "public/mokup/mokupPrizes.json"
+import { useShrinkOnScroll } from "@/hooks/useShrinkOnScroll";
 import "./Prizes.scss";
 
 const Prizes: FC = () => {
+  useShrinkOnScroll(".prizes__card");
   return (
     <section id="prizes" className="prizes">
       <video
@@ -39,17 +43,21 @@ const Prizes: FC = () => {
         </div>
 
         <div className="prizes__cardContainer">
-          {mokup.prizes.map((item, i) => (
-            <div key={i} className="prizes__card">
-              <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-                <ImgDefault
-                  className="prizes__img"
-                  src={item.image}
-                  alt={item.alt}
-                />
+          {mokup.prizes.map((item, i) => {
+            return (
+              <div
+                key={i}
+                className={`prizes__card `}>
+                <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
+                  <ImgDefault
+                    className="prizes__img"
+                    src={item.image}
+                    alt={item.alt}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         
       </div>

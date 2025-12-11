@@ -20,12 +20,11 @@
     aspect-ratio: 1366 / 425;
     display: block;
     background-position: bottom;
-    background-size: contain;
+    @include resize(background-size, contain, cover);
     background-repeat: no-repeat;
     background-image: url(/assets/details_footer.webp);
     position: absolute;
-    top: -200px;
-    @include resize(top, -200px);
+    @include resize(top, -200,-160);
     @include resize(left, 0);
     z-index: -1;
   }

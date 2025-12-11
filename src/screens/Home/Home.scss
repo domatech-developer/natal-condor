@@ -1,4 +1,7 @@
 #home {
+    position: relative;
+    @include resize(margin-bottom,-100);
+    
     .home {
         display: flex;
         flex-direction: column;
