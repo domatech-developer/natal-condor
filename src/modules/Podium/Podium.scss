@@ -3,47 +3,47 @@ $time: 1.56s;
 .podium {
     position: relative;
     z-index: 2;
-    @include resize(padding-top, 62, 40);
-    @include resize(padding-bottom, 72, 120);
-    background-image: url('/assets/background-podium.webp');
+    background-image: url("/assets/background-podium.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    @include resize(padding-top, 80, 40);
+    @include resize(padding-bottom, 80, 120);
 
     &::after {
-        content: '';
+        content: "";
         position: absolute;
-        @include resize(top, 0,-49);
+        @include resize(top, 0, -49);
         @include resize(right, 0);
         @include resize(width, 289, 100%);
         @include resize(height, 185, 120);
-        background-image: url('/assets/mais-matos-natalinos-4.webp');
+        background-image: url("/assets/mais-matos-natalinos-4.webp");
         background-repeat: no-repeat;
         @include resize(background-size, contain, cover);
         background-position: right;
         z-index: 4;
 
         @include res-md {
-            background-image: url('/assets/festin-natal-mobile.webp');
+            background-image: url("/assets/festin-natal-mobile.webp");
             background-position: center;
         }
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
-        @include resize(bottom, 0,-49);
+        @include resize(bottom, 0, -49);
         @include resize(left, 0);
         @include resize(width, 289, 100%);
         @include resize(height, 185, 120);
-        background-image: url('/assets/mais-matos-natalinos-2.webp');
+        background-image: url("/assets/mais-matos-natalinos-2.webp");
         background-repeat: no-repeat;
         @include resize(background-size, contain, cover);
         background-position: left;
         z-index: 4;
 
         @include res-md {
-            background-image: url('/assets/festin-natal-mobile.webp');
+            background-image: url("/assets/festin-natal-mobile.webp");
             background-position: center;
         }
     }
@@ -53,7 +53,7 @@ $time: 1.56s;
     }
 
     &__cardCarousel {
-        background: #1E271B;
+        background: #1e271b;
         @include resize(padding, 24);
         border-radius: 8px;
     }
@@ -68,7 +68,7 @@ $time: 1.56s;
         @include resize(margin-top, 20);
         @include resize(margin-bottom, 20);
     }
-    
+
     &__cardCarousel_title {
         @include resize(font-size, 16, 14);
         @include resize(line-height, 24);
@@ -82,8 +82,8 @@ $time: 1.56s;
         cursor: pointer;
         @include resize(width, 100%);
         @include resize(max-width, 100%);
-        background: #D10000;
-        @include resize(padding-inline, 32,16);
+        background: #d10000;
+        @include resize(padding-inline, 32, 16);
         @include resize(line-height, 20);
         @include resize(height, 40);
         @include resize(margin-top, 25, 16);
@@ -96,10 +96,10 @@ $time: 1.56s;
         z-index: 1;
 
         & span {
-        @include resize(font-size, 14);
-        @include resize(line-height, 20);
-        text-transform: uppercase;
-        font-weight: 500;
+            @include resize(font-size, 14);
+            @include resize(line-height, 20);
+            text-transform: uppercase;
+            font-weight: 500;
         }
 
         &::before,
@@ -109,7 +109,7 @@ $time: 1.56s;
             width: 30px;
             @include resize(height, 100%);
             display: block;
-            background-image: url('/assets/btn-hover.webp');
+            background-image: url("/assets/btn-hover.webp");
             background-repeat: no-repeat;
             background-position: bottom;
             transition: 0.3s ease-in-out;
@@ -144,6 +144,10 @@ $time: 1.56s;
         @include resize(--slide-size, 300, 95%);
         @include resize(--slide-spacing, 8);
 
+        &__viewport {
+            @include resize(padding-inline, 4, 16);
+        }
+
         .carouselDefault__button {
             max-width: 100%;
             border-color: #fff;
@@ -160,12 +164,6 @@ $time: 1.56s;
             @include resize(left, -60, -0);
         }
     }
-    .podiumModalContent__description {
-        @include resize(font-size, 14);
-        @include resize(line-height, 24, 20);
-        text-transform: uppercase;
-        color: #ffffff;
-    }
 
     &__carrossel_container {
         @include resize(max-width, 600, 100%);
@@ -177,32 +175,30 @@ $time: 1.56s;
         @include resize(margin-top, 24);
         @include resize(margin-bottom, 24);
     }
- 
+
     &__grid {
         display: flex;
         flex-wrap: wrap;
-        @include resize(justify-content, space-between, center);
         align-items: center;
+        justify-content: center;
+        @include resize(justify-content, space-between, center);
     }
 
     &__container {
-        @include resize(max-width, 1100, 100%);
-        @include resize(padding-inline, 0, 15);
         margin-inline: auto;
-
+        @include resize(max-width, 1100, 100%);
         &::after {
-            content: '';
+            content: "";
             position: absolute;
+            z-index: -1;
             bottom: 0;
             right: 0;
-            @include resize(width, 289, 100%);
-            @include resize(height, 185, 99);
-             background-image: url('/assets/mais-matos-natalinos-3.webp');
+            background-image: url("/assets/mais-matos-natalinos-3.webp");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: right;
-            z-index: -1;
-
+            @include resize(width, 289, 100%);
+            @include resize(height, 185, 99);
             @include res-md {
                 display: none;
             }
@@ -212,11 +208,54 @@ $time: 1.56s;
 
 .podiumModalContent {
     &__image {
+        object-fit: contain;
         @include resize(width, 100%);
         @include resize(height, 100%);
         @include resize(max-height, 367);
-        object-fit: contain;
-        @include resize(margin-top, 16);
-        @include resize(margin-bottom, 24);
+        @include resize(margin-top, 16, 12);
+        @include resize(margin-bottom, 16, 8);
+    }
+    &__description {
+        overflow-y: scroll;
+        text-wrap: balance;
+        text-wrap-style: balance;
+        font-weight: 500;
+        color: #ffffff;
+        text-transform: uppercase;
+        @include resize(font-size, 14);
+        @include resize(line-height, 24, 20);
+        @include resize(max-height, 200);
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px; /* Largura do scrollbar */
+        height: 10px; /* Altura do scrollbar */
+        background-color: transparent; /* Cor de fundo do scrollbar */
+    }
+
+    ::-webkit-scrollbar-button {
+        display: none; /* Remove o botão do scrollbar */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $color-gray-500; /* Cor do thumb */
+        border-radius: 16px; /* Bordas do thumb */
+        border: 2px solid transparent; /* Espaço ao redor do thumb */
+        background-clip: content-box; /* Faz com que o thumb pareça menor */
+
+        &:active {
+            background-color: $color-gray-400; /* Cor do thumb ao clicar o mouse */
+        }
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent; /* Faz o track ser transparente */
+    }
+
+    @-moz-document url-prefix() {
+        * {
+            scrollbar-width: thin; /* Reduce scrollbar width */
+            scrollbar-color: $color-gray-500 transparent; /* Thumb and track color */
+        }
     }
 }

@@ -2,6 +2,7 @@ import "@/scss/main.scss";
 import { Metadata } from "next";
 import QueryProvider from "@/provider/QueryProvider/QueryProvider";
 import Footer from "@/components/Footer/Footer";
+import { ModalProvider } from "@/provider/ModalProvider/ModalProvider";
 
 export const metadata: Metadata = {
   title: "Natal Condor - Promoção de Natal",
@@ -16,15 +17,16 @@ export const metadata: Metadata = {
   icons: { icon: { sizes: "582x158", url: "/icon.png", type: "image/png" } }
 };
 
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-
   return (
     <html lang="pt-Br">
       <body>
         <QueryProvider>
+          <ModalProvider>
             {children}
-          <Footer />
+
+            <Footer />
+          </ModalProvider>
         </QueryProvider>
       </body>
     </html>

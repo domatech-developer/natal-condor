@@ -1,12 +1,11 @@
 "use client";
-
-import { FC } from "react";
-import TextDefault from "@/components/TextDefault/TextDefault";
-import ImgDefault from "@/components/ImgDefault/ImgDefault";
-import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
-import mokup from "public/mokup/mokupPrizes.json";
-import { useShrinkOnScroll } from "@/hooks/useShrinkOnScroll";
 import "./Prizes.scss";
+import { FC } from "react";
+import mokup from "public/mokup/mokupPrizes.json";
+import ImgDefault from "@/components/ImgDefault/ImgDefault";
+import { useShrinkOnScroll } from "@/hooks/useShrinkOnScroll";
+import TextDefault from "@/components/TextDefault/TextDefault";
+import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
 
 const Prizes: FC = () => {
   useShrinkOnScroll(".prizes__card");

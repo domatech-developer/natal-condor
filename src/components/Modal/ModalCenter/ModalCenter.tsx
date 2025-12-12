@@ -26,7 +26,7 @@ const ModalCenter = forwardRef<HTMLDivElement, ModalCenterProps>(({ onClose, hea
 
   return (
     <ModalContext.Provider value={{ closeModal: handleClose }}>
-      <div className={` modalCenter ${active && "modalCenter--active"}`}>
+      <div className={`modalCenter ${active && "modalCenter--active"}`}>
         <div className={`modal-${active} modalCenter__container ${active && "modalCenter__container--active"}`} ref={ref}>
           <div className="modalCenter__content">
             <div className="modalCenter__header">
