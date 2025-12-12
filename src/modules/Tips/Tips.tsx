@@ -25,7 +25,7 @@ const Tips: FC = () => {
                 text={mokup.description}
               />
             </div>
-            {/* <ButtonLink
+            <ButtonLink
               className="prizes__button"
               linkProps={{
                 url: mokup.button.url,
@@ -33,7 +33,7 @@ const Tips: FC = () => {
                 target: mokup.button.target,
                 name: mokup.button.name
               }}
-            /> */}
+            />
           </div>
         </div>
 
@@ -47,20 +47,39 @@ const Tips: FC = () => {
             {mokup.carousel.map((card, index) => (
               <CarouselSlide key={index}>
                 <div className="tips__cardCarousel">
-                  <div className="tips__cardCarousel__container">
-                    <span className="tips__highlightCard">{card.highlight}</span>
-                    <ImgDefault src={card.image} alt={card.title} quality={75} className="tips__ContainerCardImage" />
-                    <div className="tips__contentCard">
-                      <h3 className="tips__cardCarousel_title">{card.title}</h3>
-                      <div className="tips__cardCarousel_infos">
-                        <p>{card.time}</p>
+                  <a
+                    href={card.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="events__cardLinkWrapper"
+                  >
+                    <div className="tips__cardCarousel__container">
+                      <span className="tips__highlightCard">{card.highlight}</span>
+                      <ImgDefault src={card.image} alt={card.title} quality={75} className="tips__ContainerCardImage" />
+                      <div className="tips__contentCard">
+                        <h3 className="tips__cardCarousel_title">{card.title}</h3>
+                        <div className="tips__cardCarousel_infos">
+                          <p>{card.time}</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </CarouselSlide>
             ))}
           </CarouselDefault>
+
+          {/* button mobile */}
+          <div className="tips__buttonMobile">
+            <ButtonLink
+              linkProps={{
+                url: mokup.button.url,
+                title: mokup.button.title,
+                target: mokup.button.target,
+                name: mokup.button.name
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>

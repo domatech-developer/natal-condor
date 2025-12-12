@@ -1,5 +1,6 @@
 .events {
     position: relative;
+    overflow-x: hidden;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -336,6 +337,7 @@
     }
 
     &__container {
+        overflow: hidden;
         @include resize(padding-inline, 112, 0);
         @include resize(max-width, 1366, 100%);
 

@@ -10,12 +10,14 @@
   },
   "carousel": [
     {
+      "link": "https://blog.condor.com.br/receita-de-natal-peru-assado-com-recheio-de-farofa-de-bacon/",
       "highlight": "Culinária",
       "image": "/images/receita-tradicional.webp",
       "title": "Receita de Natal: Peru Assado com Recheio de Farofa de Bacon",
       "time": "3 min"
     },
     {
+      "link": "https://blog.condor.com.br/decore-sua-casa-e-prepare-as-surpresas-para-o-natal/",
       "highlight": "Culinária",
       "image": "/images/decoracao-casa.webp",
       "title": "Decore Sua Casa e Prepare as Surpresas para o Natal",

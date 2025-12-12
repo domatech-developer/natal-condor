@@ -1,21 +1,57 @@
 .footer {
+  overflow: hidden;
   position: relative;
-  background-image: url('/assets/background-footer.svg');
+  @include resize(background-image,
+    url('/assets/background-footer.svg'),
+    url('/assets/background-footer-mobile.svg')
+  );
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0 -50px;
-  @include resize(padding-top, 255);
+  @include resize(background-position, 0 -50px, top);
+  @include resize(padding-top, 255, 123);
   @include resize(margin-top, -260);
   z-index: 2;
 
   &__container {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: column;
     @include resize(padding-inline, 80, 16);
-    @include resize(padding-top, 80, 40);
     @include max-width(1366);
     margin-inline: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      @include resize(display, block, none);
+      @include resize(width, 200);
+      @include resize(height, 199);
+      @include resize(left, 0);
+      @include resize(top, -100);
+      background-image: url('/assets/group-neve.webp');
+      background-size: contain;
+      transition: 0.5s ease-in;
+      transform: translateY(-150px);
+      opacity: 0;
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      @include resize(display, block, none);
+      @include resize(width, 180);
+      @include resize(height, 180);
+      @include resize(right, -100);
+      @include resize(bottom, 100);
+      background-image: url('/assets/group-neve-2.webp');
+      background-size: contain;
+      transition: 0.5s ease-in;
+      transform: translateY(-105px);
+      z-index: -1;
+      opacity: 0;
+    }
   }
  
   &__links {
@@ -31,9 +67,7 @@
   }
 
   &__ListCard {
-    @include res-md {
-      padding-bottom: 20px;
-    }
+    @include resize(padding-bottom, 0, 26);
   }
   &__ListCard:last-child {
     @include res-md {
@@ -85,6 +119,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @include resize(flex-direction, row, column);
     @include resize(margin-top, 32, 16);
     @include resize(margin-bottom, 16, 8);
     @include resize(padding-top, 32, 16);
@@ -114,6 +149,10 @@
         font-weight: 500;
       }
     }
+
+    @include res-md{
+      text-align: center;
+    }
   }
 
 
@@ -132,9 +171,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include resize(gap, 8);
+    @include resize(gap, 8, 16);
     @include resize(margin-top, 8);
     @include resize(padding-top, 8);
+    @include resize(flex-direction,row, column);
     border-top: 1px solid rgba(12, 42, 67, 0.20);
   }
 
@@ -155,5 +195,12 @@
   &__list_sociais {
     @include resize(gap, 8);
     flex-direction: row !important;
+  }
+
+  &.active {
+    .footer__container::after,.footer__container::before {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 }

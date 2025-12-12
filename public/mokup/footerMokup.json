@@ -3,34 +3,32 @@
     "acontecendoNoCondor": {
       "title": "Acontecendo no Condor",
       "links": [
-        { "label": "Volta às aulas", "url": "/volta-as-aulas" },
-        { "label": "Novas Lojas", "url": "/novas-lojas" },
-        { "label": "Prova Social", "url": "/prova-social" }
+        { "label": "Novas Lojas", "url": "https://novaslojas.condor.com.br/" },
+        { "label": "Entrega de prêmios", "url": "https://ganhadores.condor.com.br/" }
       ]
     },
     "nossosSites": {
       "title": "Nossos sites",
       "links": [
-        { "label": "Condor em Casa", "url": "https://condoremcasa.com.br" },
-        { "label": "Condor Eletro", "url": "https://condoreletro.com.br" },
-        { "label": "Institucional", "url": "/institucional" }
+        { "label": "Condor em Casa", "url": "https://www.condor.com.br/" },
+        { "label": "Institucional", "url": "https://institucional.condor.com.br/" }
       ]
     },
     "outros": {
       "title": "Outros",
         "links": [
-            { "label": "Regulamento", "url": "/regulamento" },
-            { "label": "Política de privacidade", "url": "/politica-de-privacidade" },
-            { "label": "Fale conosco", "url": "/fale-conosco" }
+            { "label": "Regulamento", "url": "https://blackfriday.condor.com.br/files/regulamento-semanas-premiadas.pdf" },
+            { "label": "Política de privacidade", "url": "https://institucional.condor.com.br/acoes-condor/politica-de-privacidade/" },
+            { "label": "Fale conosco", "url": "https://institucional.condor.com.br/sac/" }
         ]
     },
     "nossasRedes": {
       "title": "Nossas redes",
       "icons": [
-        { "image": "/icons/facebook.svg", "label": "Rede social Facebook", "url": "https://www.facebook.com/RedeCondor/" },
-        { "image": "/icons/instagram.svg", "label": "Rede social Instagram", "url": "https://www.instagram.com/redecondor/" },
+        { "image": "/icons/facebook.svg", "label": "Rede social Facebook", "url": "https://www.facebook.com/ClubeCondorOficial" },
+        { "image": "/icons/instagram.svg", "label": "Rede social Instagram", "url": "https://www.instagram.com/redecondor/?hl=pt" },
         { "image": "/icons/tiktok.svg", "label": "Rede social TikTok", "url": "https://www.tiktok.com/@redecondor?lang=pt-BR" },
-        { "image": "/icons/youtube.svg", "label": "Rede social YouTube", "url": "https://www.youtube.com/@redecondor" },
+        { "image": "/icons/youtube.svg", "label": "Rede social YouTube", "url": "https://www.youtube.com/user/redecondor" },
         { "image": "/icons/linkedin.svg", "label": "Rede social LinkedIn", "url": "https://br.linkedin.com/company/redecondor" }
       ]
     }

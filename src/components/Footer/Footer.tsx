@@ -1,9 +1,10 @@
-import "./Footer.scss";
 import { FC } from "react";
 import Link from "next/link";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import mock from "public/mokup/footerMokup.json";
 import TextDefault from "@/components/TextDefault/TextDefault";
+
+import "./Footer.scss";
 
 const Footer: FC = () => {
 
