@@ -2,7 +2,6 @@ import "./Home.scss";
 import { FC } from "react";
 import MainDefault from "@/components/Main/Main";
 import StructureData from "@/components/SEO/StructureData/StructureData";
-
 import Prizes from "@/modules/Prizes/Prizes";
 import Participate from "@/modules/Participate/Participate";
 import Podium from "@/modules/Podium/Podium";
@@ -10,7 +9,6 @@ import Happening from "@/modules/Happening/Happening";
 import Clube from "@/modules/Clube/Clube";
 import Tips from "@/modules/Tips/Tips";
 import Banner from "@/modules/Banner/Banner";
-
 import Events from "@/modules/Events/Events";
 import Offers from "@/modules/Offers/Offers";
 

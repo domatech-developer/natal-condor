@@ -1,66 +1,65 @@
 .happening {
-    @include resize(padding-top, 185, 0);
-    @include resize(padding-inline, 20, 0);
+  @include resize(padding-top, 185, 0);
+  @include resize(padding-inline, 20, 0);
+  position: relative;
+  &::after {
+    content: "";
+    @include resize(width, 100%);
+    @include resize(height, 200, 65);
+    background-image: url("/assets/faixa-natal.webp");
+    display: block;
+    position: absolute;
+    @include resize(top, -60, -30);
+    @include resize(left, 0);
+    z-index: 1;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  &__title {
+    text-align: center;
+    @include resize(font-size, 40, 24);
+    @include resize(line-height, 50, 32);
+    font-weight: 700;
+    background: linear-gradient(180deg, #ffe572 15.91%, #ffd13c 57.73%, #ffe572 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__imgContainer {
     position: relative;
+    @include resize(max-width, 1154, 100%);
+    @include resize(margin-inline, auto, 0);
+    border: 3px solid #fbcd71;
+    border-radius: 25px;
+    overflow: hidden;
+    @include resize(margin-bottom, 56);
 
-    &::after {
-        content: '';
-        @include resize(width,100%);
-        @include resize(height, 200, 65);
-        background-image: url('/assets/faixa-natal.webp');
-        display: block;
-        position: absolute;
-        @include resize(top, -60, -30);
-        @include resize(left, 0);
-        z-index: 1;
-        background-position: center center;
-        background-size: contain;
+    @include res-md {
+      border: none;
+      border-radius: 0;
     }
+  }
 
-    &__title {
-        text-align: center;
-        @include resize(font-size, 40, 24);
-        @include resize(line-height, 50, 32);
-        font-weight: 700;
-        background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+  &__descriptionImage {
+    position: absolute;
+    @include resize(width, 400, 100%);
+    @include resize(bottom, 0);
+    @include resize(right, 0);
+    @include resize(padding, 48, 32);
+    @include resize(font-size, 40, 24);
+    @include resize(line-height, 48, 32);
+    color: #fff;
+    z-index: 1;
+  }
 
-    &__imgContainer {
-        position: relative;
-        @include resize(max-width, 1154, 100%);
-        @include resize(margin-inline, auto, 0);
-        border: 3px solid #FBCD71;
-        border-radius: 25px;
-        overflow: hidden;
-        @include resize(margin-bottom, 56);
-
-        @include res-md {
-            border: none;
-            border-radius: 0;
-        }
-    }
-
-    &__descriptionImage {
-        position: absolute;
-        @include resize(width, 400, 100%);
-        @include resize(bottom,0);
-        @include resize(right, 0);
-        @include resize(padding, 48, 32);
-        @include resize(font-size, 40, 24);
-        @include resize(line-height, 48, 32);
-        color: #fff;
-        z-index: 1;
-    }
-
-     .buttonLink { 
+  .buttonLink {
     cursor: pointer;
     @include resize(width, 100%);
-    @include resize(max-width, 169,100%);
-    background: #D10000;
-    @include resize(padding-inline, 32,16);
+    @include resize(max-width, 169, 100%);
+    background: #d10000;
+    @include resize(padding-inline, 32, 16);
     @include resize(line-height, 20);
     @include resize(height, 40);
     @include resize(margin-top, 25, 16);
@@ -86,7 +85,7 @@
       width: 30px;
       @include resize(height, 100%);
       display: block;
-      background-image: url('/assets/btn-hover.webp');
+      background-image: url("/assets/btn-hover.webp");
       background-repeat: no-repeat;
       background-position: bottom;
       transition: 0.3s ease-in-out;

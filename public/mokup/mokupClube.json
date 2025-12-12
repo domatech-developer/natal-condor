@@ -5,5 +5,35 @@
   "image": {
     "src": "/images/condor_natalino.png",
     "alt": "Imagem de figurinhas"
+  },
+  "qrCode": {
+    "repeater": [
+      {
+        "id": 1,
+        "img": {
+          "src": "/images/google-play.svg",
+          "alt": "Baixe na Google Play"
+        },
+        "link": {
+          "url": "https://cndr.me/novoapp",
+          "title": "Google Play",
+          "name": "Google Play",
+          "target": "_blank"
+        }
+      },
+      {
+        "id": 2,
+        "img": {
+          "src": "/images/app-store.svg",
+          "alt": "Baixe na App Store"
+        },
+        "link": {
+          "url": "https://cndr.me/novoapp",
+          "title": "App Store",
+          "name": "App Store",
+          "target": "_blank"
+        }
+      }
+    ]
   }
 }
