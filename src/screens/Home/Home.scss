@@ -11,7 +11,15 @@
         height: 100vh;
         &__light {
             position: relative;
-            background: #20170e;
+            background-color: #000000;
+
+            &::after {
+                content: "";
+                z-index: 0;
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(180deg, rgba(32, 23, 14, 0) 50%, rgba(32, 23, 14, 1) 100%);
+            }
         }
     }
 

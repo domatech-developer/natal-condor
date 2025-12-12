@@ -1,6 +1,7 @@
 .prizes {
   position: relative;
   display: flex;
+  z-index: 1;
   justify-content: center;
   width: 100%;
   min-height: 100vh;
@@ -26,7 +27,10 @@
   }
 
   &__container {
+    position: relative;
     display: flex;
+    z-index: 1;
+
     justify-content: center;
     width: 100%;
     @include resize(flex-direction, row, column);
@@ -67,7 +71,7 @@
     left: 50%;
     display: block;
     border-radius: 828px;
-    mix-blend-mode: soft-light;
+    // mix-blend-mode: soft-light;
     background: url("/images/Ellipse-1.svg") no-repeat center / cover;
     filter: blur(50px);
     @include resize(max-height, 496, 250);
