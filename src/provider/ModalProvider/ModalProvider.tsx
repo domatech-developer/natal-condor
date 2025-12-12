@@ -1,7 +1,6 @@
 // ModalProvider.js
 "use client";
 import { createContext, useContext, useState, ReactNode, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { v4 as uuid4 } from "uuid";
 import ModalItem from "./ModalItem/ModalItem";
 
@@ -33,8 +32,6 @@ export type ModalData = {
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [modals, setModals] = useState<ModalData[]>([]);
-  const params = useSearchParams();
-  useEffect(() => setModals([]), [params]);
 
   const openModal = (props: ModalProps) => {
     const id = uuid4();

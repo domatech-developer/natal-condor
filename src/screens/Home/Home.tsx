@@ -16,9 +16,8 @@ import Offers from "@/modules/Offers/Offers";
 
 interface HomeProps {
   data?: any;
-  page?: string[];
 }
-const Home: FC<HomeProps> = async ({ data, page }) => {
+const Home: FC<HomeProps> = async ({ data }) => {
   const flocoNeves = Array.from({ length: 3 });
 
   return (

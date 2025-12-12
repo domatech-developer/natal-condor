@@ -6,8 +6,9 @@ const nextConfig = {
       bodySizeLimit: "200mb"
     }
   },
+  allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   sassOptions: {
-    silenceDeprecations: ["legacy-js-api", "mixed-decls", "import", "global-builtin"],
+    silenceDeprecations: ["legacy-js-api", "import", "global-builtin"],
     prependData: `
     @use "@/scss/base/typography.scss" as *;
     @use "@/scss/base/responsives.scss" as *;
