@@ -20,5 +20,9 @@
       "image": "/images/vale-compras-anual.webp",
       "alt": "imagem ilustrativa prêmio 3, vale compras anual"
     }
-  ]
+  ],
+  "banner": {
+    "image": "/images/vales-compras-mobile.webp",
+    "alt": "imagem ilustrativa banner prêmios natal condor"
+  }
 }

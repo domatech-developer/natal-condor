@@ -1,11 +1,10 @@
 $qtdCard: 3;
 
 .participate {
-    @include resize(padding-top, 80, 60);
-    @include resize(padding-bottom, 136, 100);
+    @include resize(padding-top, 60, 40);
+    @include resize(padding-bottom, 100, 100);
     @include resize(padding-inline, 0, 15);
     position: relative;
-    background-color: #000;
 
     &__card_description {
         position: relative;
@@ -14,10 +13,10 @@ $qtdCard: 3;
         gap: 28px;
         & p {
             color: #fff;
+            font-weight: 600;
             @include resize(font-size, 16, 14);
             @include resize(line-height, 130%);
             @include resize(line-height, 130%);
-            font-weight: 400;
         }
 
         &::before {
@@ -27,20 +26,25 @@ $qtdCard: 3;
             @include resize(line-height, 100%);
             font-weight: 700;
             z-index: 1;
-            background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+            background: linear-gradient(180deg, #ffe572 15.91%, #ffd13c 57.73%, #ffe572 100%);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             bottom: 0;
             left: 38px;
             width: 1px;
             height: 100%;
-             background: linear-gradient(180deg, rgb(255, 229, 114,0.3) 15.91%, rgb(255, 209, 60,0.3) 57.73%, rgb(255, 229, 114,0.3) 100%);
+            background: linear-gradient(
+                180deg,
+                rgb(255, 229, 114, 0.3) 15.91%,
+                rgb(255, 209, 60, 0.3) 57.73%,
+                rgb(255, 229, 114, 0.3) 100%
+            );
         }
     }
 
@@ -54,7 +58,7 @@ $qtdCard: 3;
     }
 
     &__cardFixed {
-        background: linear-gradient(90deg, #7C2622 0%, #952E29 100%);
+        background: linear-gradient(90deg, #7c2622 0%, #952e29 100%);
         position: relative;
         @include resize(width, 100%);
         @include resize(max-width, 280);
@@ -69,10 +73,12 @@ $qtdCard: 3;
         transition: 0.3s ease-in-out;
         opacity: 0;
         transform: translateY(100px);
-        transition: opacity 0.6s, transform 0.6s ease-out;
+        transition:
+            opacity 0.6s,
+            transform 0.6s ease-out;
 
         &::after {
-            content: '';
+            content: "";
             display: block;
             @include resize(width, 100%);
             @include resize(height, 76);
@@ -83,7 +89,7 @@ $qtdCard: 3;
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            background-image: url('/assets/festao-sino.webp');
+            background-image: url("/assets/festao-sino.webp");
             transform: scale(0.4);
             opacity: 0;
             transition: 0.5s;
@@ -100,7 +106,7 @@ $qtdCard: 3;
         @include max-width(766);
         @include resize(margin-inline, auto);
         @include resize(margin-bottom, 40, 25);
-        @include resize(gap,8);
+        @include resize(gap, 8);
     }
 
     &__title {
@@ -108,14 +114,16 @@ $qtdCard: 3;
         @include resize(font-size, 40, 24);
         @include resize(line-height, 50, 32);
         font-weight: 700;
-        background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+        background: linear-gradient(180deg, #ffe572 15.91%, #ffd13c 57.73%, #ffe572 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        transform: translateY(-150px) scale(0.90);
-        transition-delay: .5s; 
+        transform: translateY(-150px) scale(0.9);
+        transition-delay: 0.5s;
         opacity: 0;
-        transition: opacity .6s ease .5s, transform .6s ease .5s;
+        transition:
+            opacity 0.6s ease 0.5s,
+            transform 0.6s ease 0.5s;
 
         @include res-md {
             transform: translateY(0) scale(1);
@@ -124,16 +132,19 @@ $qtdCard: 3;
 
     &__description {
         text-align: center;
-        @include resize(font-size, 18, 16);
-        @include resize(line-height, 32, 24);
-        color: #FFFFFF;
+        color: #ffffff;
         font-weight: 400;
         transform: scale(0.95);
         transition-delay: 1.35s;
-        transition: opacity .4s ease 1.35s,transform .6s ease 1.35s;
-
+        transition:
+            opacity 0.4s ease 1.35s,
+            transform 0.6s ease 1.35s;
+        @include resize(font-size, 18, 16);
+        @include resize(line-height, 32, 24);
         @include res-md {
             transform: scale(1);
+            text-wrap: balance;
+            text-wrap-style: balance;
         }
     }
 
@@ -147,12 +158,10 @@ $qtdCard: 3;
     }
 
     &.active {
-
         .participate__cardFixed {
             opacity: 1;
             transform: translateY(0);
         }
-
 
         @for $i from 1 through $qtdCard {
             .participate__cardFixed:nth-child(#{$i}) {
@@ -162,7 +171,7 @@ $qtdCard: 3;
 
         @for $i from 1 through $qtdCard {
             .participate__cardFixed:nth-child(#{$i})::after {
-                transition-delay: ($i * 0.65s) + 0.20s;
+                transition-delay: ($i * 0.65s) + 0.2s;
                 transform: scale(1);
                 opacity: 1;
             }

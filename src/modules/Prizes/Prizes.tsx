@@ -4,7 +4,7 @@ import { FC } from "react";
 import TextDefault from "@/components/TextDefault/TextDefault";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
-import mokup from "public/mokup/mokupPrizes.json"
+import mokup from "public/mokup/mokupPrizes.json";
 import { useShrinkOnScroll } from "@/hooks/useShrinkOnScroll";
 import "./Prizes.scss";
 
@@ -12,24 +12,14 @@ const Prizes: FC = () => {
   useShrinkOnScroll(".prizes__card");
   return (
     <section id="prizes" className="prizes">
-      <video
-        className="prizes__bgvideo"
-        autoPlay
-        muted
-        loop
-        playsInline
-        aria-hidden="true"
-      >
+      <video className="prizes__bgvideo" autoPlay muted loop playsInline aria-hidden="true">
         <source src={mokup.backgroundVideo} type="video/mp4" />
       </video>
 
       <div className="prizes__container">
         <div className="prizes__textContainer">
           <div className="prizes__stickyContainer">
-            <TextDefault
-              className="prizes__text"
-              text={mokup.title}
-            />
+            <TextDefault className="prizes__text" text={mokup.title} />
             <ButtonLink
               className="prizes__button"
               linkProps={{
@@ -45,22 +35,24 @@ const Prizes: FC = () => {
         <div className="prizes__cardContainer">
           {mokup.prizes.map((item, i) => {
             return (
-              <div
-                key={i}
-                className={`prizes__card `}>
+              <div key={i} className={`prizes__card `}>
                 <div className="prizes__imgCarContainer prizes__imgCarContainer--mod">
-                  <ImgDefault
-                    className="prizes__img"
-                    src={item.image}
-                    alt={item.alt}
-                    quality={75}
-                  />
+                  <ImgDefault className="prizes__img" src={item.image} alt={item.alt} quality={75} skeleton={false} />
                 </div>
               </div>
             );
           })}
         </div>
-        
+
+        <div className="prizes__bannerContainer">
+          <ImgDefault
+            className="prizes__banner"
+            src={mokup.banner.image}
+            alt={mokup.banner.alt}
+            quality={75}
+            skeleton={false}
+          />
+        </div>
       </div>
     </section>
   );
