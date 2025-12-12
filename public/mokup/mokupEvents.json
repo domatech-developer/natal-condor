@@ -1,0 +1,94 @@
+{
+   
+  "eventos": [
+    {
+        "datas": "02 e 03/12",
+        "hora": "19h30",
+        "titulo": "Apresentações Condor Nilo Peçanha",
+        "local": "Condor Nilo Peçanha",
+        "image": "/images/evento1.png",
+        "alt": "imagem ilustrativa prêmio 1, 56 carros semana",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+        "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    },
+    {
+        "datas": "23/12",
+        "hora": "19h30",
+        "titulo": "Caravana de Natal Coca-Cola especial",
+        "local": "Condor Nilo Peçanha",
+        "image": "/images/evento2.png",
+        "alt": "imagem ilustrativa prêmio 2, vale compras diário",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+        "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    },
+    {
+        "datas": "01 a 23/12",
+        "titulo": "Espaços decorados e troca de brindes",
+        "descricao": "Troca de brindes na compra de produtos dos parceiros",
+        "image": "/images/evento3.png",
+        "alt": "imagem ilustrativa prêmio 3, vale compras anual",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+        "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    },
+    {
+        "datas": "09 e 10/12",
+        "hora": "19h - 21h",
+        "cidade": "São José dos Pinhais",
+        "local": "Hiper Condor São José",
+        "image": "/images/evento3.png",
+        "alt": "imagem ilustrativa prêmio 1, 56 carros semana",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+       "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    },
+    {
+        "datas": "15 e 16/12",
+        "hora": "19h - 21h",
+        "cidade": "Ponta Grossa",
+        "local": "Hiper Condor Jardim Carvalho",
+        "image": "/images/evento3.png",
+        "alt": "imagem ilustrativa prêmio 2, vale compras diário",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+        "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    },
+    {
+        "datas": "17 e 18/12",
+        "hora": "19h - 21h",
+        "cidade": "Maringá",
+        "local": "Super Condor Kakogawa",
+        "image": "/images/evento3.png",
+        "alt": "imagem ilustrativa prêmio 3, vale compras anual",
+        "descricaoHover": "Apresentações natalinas da Companhia de Teatro Regina Vogue nas lojas Condor Nilo Peçanha (Curitiba), São José dos Pinhais Av. Joinville, Jardim Carvalho (Ponta Grossa), Itaum (Joinville) e Kakogawa (Maringá) ",
+        "button": {
+            "url": "",
+            "title": "Ver ofertas",
+            "target": "_blank",
+            "name": "VER MAIS"
+        }
+    }
+  ]
+}

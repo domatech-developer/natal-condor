@@ -53,7 +53,7 @@ const Podium: FC = () => {
                   <div className="podium__cardCarousel" >
                     <div className="podium__cardCarrosselContainer">
                       <div className="podium__cardCarrosselContainer_image">
-                        <ImgDefault src={kit.imagemCard} alt={kit.nome} className="podium__imageCardCarousel" />
+                        <ImgDefault src={kit.imagemCard} alt={kit.nome} className="podium__imageCardCarousel" quality={75} />
                       </div>
                       <h3 className="podium__cardCarousel_title">{kit.nome}</h3>
                       <ButtonLink className="podium__buttonCard" onClick={() => handleOpenModal(kit)}

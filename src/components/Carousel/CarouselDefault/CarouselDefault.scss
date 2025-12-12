@@ -105,9 +105,9 @@
     display: flex;
     justify-content: center;
     left: 0;
-    bottom: -24px;
+    bottom: -37px;
     width: 100%;
-    gap: 8px;
+    gap: 24px;
   }
 
   &__dot {
@@ -115,8 +115,9 @@
     border: 1px solid #fff;
     background-color: transparent;
     border-radius: 1000px;
-    @include resize(width, 12);
-    @include resize(height, 12);
+    @include resize(width, 8);
+    @include resize(height, 8);
+    background-color: rgba(255, 255, 255, 0.534);
 
     &--selected {
       background-color: #fff;

@@ -1,9 +1,11 @@
 .banner {
-    position: relative;
+    position: sticky;
+    @include resize(top, -100, -20);
     z-index: 0;
-    @include resize(padding-top, 76, 42);
-    @include resize(padding-bottom, 76, 42);
-    background-image: url('/images/banner-natal-homepage.webp');
+    @include resize(padding-top, 76, 0);
+    @include resize(padding-bottom, 76, 0);
+    @include resize(height, auto, 670);
+    @include resize(background-image, url('/images/banner-natal-homepage.webp'), url('/images/banner-natal-homepage-mobile.webp')); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,16 +16,17 @@
     }
 
     &__titlePage {
-        @include resize(width, 632, 354);
-        @include resize(height, 333, 187);
+        @include resize(width, 632, 100%);
+        @include resize(height, 333, 100%);
     }
 
     &__logo {
         position: relative;
         @include resize(width, 270, 151);
         @include resize(height, 61, 47);
-        @include resize(top, -45);
-        @include resize(right, 30);
+        @include resize(top, -45, -20);
+        @include resize(right, 30, 0);
+        
     }
 
     &__listImages {
@@ -36,8 +39,8 @@
         position: relative;
         @include resize(width, 356, 224);
         @include resize(height, 126, 79);
-        @include resize(top, -40);
-        @include resize(left, -20);
+        @include resize(top, -40, -20);
+        @include resize(left, -20, -10);
     }
 
     &__container {

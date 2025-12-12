@@ -1,11 +1,12 @@
 .clube {
   position: relative;
+  background-color: #20170E;
   width: 100%;
   display: flex;
   justify-content: center;
   @include resize(padding-inline, 144, 16);
-  @include resize(padding-top, 32, 16);
-  @include resize(padding-bottom, 200, 100);
+  @include resize(padding-top, 40);
+  @include resize(padding-bottom, 40);
 
   &__container {
     width: 100%;
@@ -56,14 +57,8 @@
         overflow: hidden;
         white-space: nowrap;
 
-        // clip-path: inset(0 100% 0 0);
     }
 
-    // &.active {
-    //     .clube__highlight {
-    //         animation: revealText 1.6s ease forwards;
-    //     }
-    // }
 
   &__textSmall {
     color: $color-white;

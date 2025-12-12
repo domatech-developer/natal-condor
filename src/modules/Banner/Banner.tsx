@@ -1,5 +1,6 @@
 import { FC } from "react";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
+
 import "./Banner.scss";
 
 const Banner: FC = () => {
@@ -14,7 +15,6 @@ const Banner: FC = () => {
               alt={"Imagem com título Momentos que pagam o tempo"}
               quality={75}
               aria-hidden="true"
-              mobileSrc="/images/Condor-momentos-que-param-o-tempo.webp"
             />
             <ImgDefault
               className="banner__imgPresent"
@@ -22,7 +22,6 @@ const Banner: FC = () => {
               alt={"Imagem ilustrativa escrito natal"}
               quality={75}
               aria-hidden="true"
-              mobileSrc="/images/titulo-natal-banner.webp"
             />
             <ImgDefault
               className="banner__logo"
@@ -30,7 +29,6 @@ const Banner: FC = () => {
               alt={"Logo da rede condor"}
               quality={75}
               aria-hidden="true"
-              mobileSrc="/images/logo-rede-condor.webp"
             />
           </div>
         </div>

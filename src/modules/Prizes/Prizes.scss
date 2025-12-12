@@ -51,7 +51,7 @@
   }
 
   &__button {
-   background: #D10000;
+    background: #D10000;
     @include resize(padding-inline, 32,16);
     @include resize(line-height, 20);
     @include resize(max-width, 169, 100%);

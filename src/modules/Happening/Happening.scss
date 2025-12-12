@@ -1,5 +1,6 @@
 .happening {
-    @include resize(padding-top, 174, 60);
+    @include resize(padding-top, 185, 0);
+    @include resize(padding-inline, 20, 0);
     position: relative;
 
     &::after {
@@ -26,4 +27,90 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    &__imgContainer {
+        position: relative;
+        @include resize(max-width, 1154, 100%);
+        @include resize(margin-inline, auto, 0);
+        border: 3px solid #FBCD71;
+        border-radius: 25px;
+        overflow: hidden;
+        @include resize(margin-bottom, 56);
+
+        @include res-md {
+            border: none;
+            border-radius: 0;
+        }
+    }
+
+    &__descriptionImage {
+        position: absolute;
+        @include resize(width, 400, 100%);
+        @include resize(bottom,0);
+        @include resize(right, 0);
+        @include resize(padding, 48, 32);
+        @include resize(font-size, 40, 24);
+        @include resize(line-height, 48, 32);
+        color: #fff;
+        z-index: 1;
+    }
+
+     .buttonLink { 
+    cursor: pointer;
+    @include resize(width, 100%);
+    @include resize(max-width, 169,100%);
+    background: #D10000;
+    @include resize(padding-inline, 32,16);
+    @include resize(line-height, 20);
+    @include resize(height, 40);
+    @include resize(margin-top, 25, 16);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    & span {
+      @include resize(font-size, 14);
+      @include resize(line-height, 20);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      @include resize(height, 100%);
+      display: block;
+      background-image: url('/assets/btn-hover.webp');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      transition: 0.3s ease-in-out;
+      z-index: 0;
+      transform: translateY(50px);
+    }
+
+    &::after {
+      @include resize(bottom, 0);
+      @include resize(left, 0);
+    }
+
+    &::before {
+      @include resize(top, 0);
+      @include resize(right, 0);
+      transform: rotate(-180deg) translateY(50px);
+    }
+
+    &:hover::after {
+      transform: translateY(0);
+    }
+
+    &:hover::before {
+      transform: rotate(-180deg) translateY(0);
+    }
+  }
 }

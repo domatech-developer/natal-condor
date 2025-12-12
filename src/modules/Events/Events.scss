@@ -1,36 +1,90 @@
+
 .events {
     position: relative;
-    @include resize(padding-top, 96, 40);
+    @include resize(padding-top, 100, 70);
     @include resize(padding-bottom, 80, 40);
+    background: #20170E;
 
     &__cardCarousel {
-        background: #1E271B;
-        @include resize(padding, 24);
-        border-radius: 8px;
+        @include resize(width, 344, 100%);
+        @include resize(height, 446, 475);
+        position: relative;
+        @include resize(padding, 23, 32);
+        background-image: url('/assets/background-card-effect.svg');
+        background-repeat: no-repeat;
+        background-position: top;
+        @include resize(background-size, cover, contain);
+
+        &:hover {
+            .events__hoverCard {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @include res-md {
+            .events__hoverCard {
+                opacity: 1;
+                transform: translateY(0);
+                position: relative;
+            }
+            .events__cardCarrosselContainer_image {
+                display: none;
+            }
+        }
+    }
+    &__cardCarrosselContainer {
+        position: relative;
+        overflow: hidden;
     }
 
-    &__imageCardCarousel {
-        @include resize(width, 100%);
-        @include resize(height, 220);
-        object-fit: contain;
-    }
+    &__hoverCard {
+        position: absolute;
+        bottom: 0;
+        background: #364132;
+        @include resize(width,100%);
+        @include resize(height, 180);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: 0.3s ease-in-out;
+        opacity: 0;
+        transform: translatey(100%);
 
-    &__cardCarrosselContainer_image {
-        @include resize(margin-top, 20);
-        @include resize(margin-bottom, 20);
-    }
-    
-    &__cardCarousel_title {
-        @include resize(font-size, 16, 14);
-        @include resize(line-height, 24);
-        font-weight: 700;
-        color: #fff;
-        text-align: center;
-        @include resize(margin-bottom, 12);
+        .hoverCard_description {
+            display: block;
+            word-break: break-all;
+            @include resize(font-size, 14);
+            @include resize(line-height, 20);
+            color: #FFFFFF;
+            font-weight: 400;
+            @include resize(max-height, 110);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.4) transparent;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(255,255,255,0.4);
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(255,255,255,0.6);
+            }
+        }
+
     }
 
     &__buttonCard {
-        cursor: pointer;
+                cursor: pointer;
         @include resize(width, 100%);
         @include resize(max-width, 100%);
         background: #D10000;
@@ -46,6 +100,97 @@
         position: relative;
         z-index: 1;
 
+        & span {
+        @include resize(font-size, 14);
+        @include resize(line-height, 20);
+        text-transform: uppercase;
+        font-weight: 500;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            @include resize(height, 100%);
+            display: block;
+            background-image: url('/assets/btn-hover.webp');
+            background-repeat: no-repeat;
+            background-position: bottom;
+            transition: 0.3s ease-in-out;
+            z-index: 0;
+            transform: translateY(50px);
+        }
+
+        &::after {
+            @include resize(bottom, 0);
+            @include resize(left, 0);
+        }
+
+        &::before {
+            @include resize(top, 0);
+            @include resize(right, 0);
+            transform: rotate(-180deg) translateY(50px);
+        }
+
+        &:hover::after {
+            transform: translateY(0);
+        }
+
+        &:hover::before {
+            transform: rotate(-180deg) translateY(0);
+        }
+    }
+
+    &__cardHeader {
+        display: flex;
+        align-items: end;
+        @include resize(gap, 10);
+        @include resize(padding-top, 10);
+    }
+
+    &__limitContent {
+        @include resize(margin-top, 70);
+        @include resize(margin-bottom, 16);
+        @include resize(height, 140, 100);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include res-small {
+        @include resize(margin-top, 40);
+
+        }
+    }
+
+    &__cardCarousel_time, &__contentCard {
+        @include resize(font-size, 16, 14);
+        @include resize(line-height, 32, 20);
+        letter-spacing: -1px;
+        color: #FFFFFF;
+        font-weight: 400;
+    }
+
+    &__contentCard {
+        font-weight: 600;
+    }
+
+    &__imageCardCarousel {
+        @include resize(width, 100%);
+        @include resize(height, 180);
+        object-fit: contain;
+    }
+
+    &__cardCarousel_title {
+        @include resize(font-size, 16, 14);
+        @include resize(line-height, 24);
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        @include resize(margin-bottom, 12);
+    }
+
+    &__buttonCard {
         &:hover::after {
             transform: translateY(0);
         }
@@ -59,7 +204,7 @@
     }
 
     .carouselDefault {
-        @include resize(--slide-size, 344, 95%);
+        @include resize(--slide-size, 33%, 95%);
         @include resize(--slide-spacing, 8);
 
         .carouselDefault__button {
@@ -92,6 +237,14 @@
         @include resize(margin-inline, auto);
         @include resize(margin-bottom, 40, 25);
         @include resize(gap,8);
+    }
+
+    &__cardCarousel_dates {
+        @include resize(font-size, 40, 24);
+        @include resize(line-height, 50, 32);
+        font-weight: 700;
+       color: #FFE572;
+       display: flex;
     }
 
     &__title {
@@ -129,7 +282,7 @@
     }
 
     &__container {
-        @include resize(max-width, 1366, 100%);
+        @include resize(max-width, 1142, 100%);
         @include resize(padding-inline, 0, 15);
         margin-inline: auto;
 

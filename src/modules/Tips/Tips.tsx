@@ -5,6 +5,7 @@ import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import CarouselDefault from "@/components/Carousel/CarouselDefault/CarouselDefault";
 import CarouselSlide from "@/components/Carousel/CarouselDefault/components/CarouselSlide";
 import mokup from "public/mokup/mokupTips.json";
+
 import "./Tips.scss";
 
 const Tips: FC = () => {
@@ -34,7 +35,7 @@ const Tips: FC = () => {
                   <div className="tips__cardCarousel__container">
                     <span className="highlight">{card.highlight}</span>
                     <div className="tips__cardCarousel__containerImage">
-                      <ImgDefault src={card.image} alt={card.title} />
+                      <ImgDefault src={card.image} alt={card.title} quality={75} />
                     </div>
                     <h3 className="tips__cardCarousel_title">{card.title}</h3>
                     <div className="tips__cardCarousel_infos">

@@ -1,7 +1,12 @@
 .footer {
   position: relative;
-  background: linear-gradient(180deg, rgba(191, 206, 217, 0.00) 0%, #BFCED9 31.3%, #BFCED9 100%);
-  margin-top: 100px;
+  background-image: url('/assets/background-footer.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -50px;
+  @include resize(padding-top, 255);
+  @include resize(margin-top, -260);
+  z-index: 2;
 
   &__container {
     display: flex;
@@ -12,23 +17,7 @@
     @include max-width(1366);
     margin-inline: auto;
   }
-
-  &::before {
-    content: "";
-    @include resize(width, 100%);
-    @include resize(min-height, 425);
-    aspect-ratio: 1366 / 425;
-    display: block;
-    background-position: bottom;
-    @include resize(background-size, contain, cover);
-    background-repeat: no-repeat;
-    background-image: url(/assets/details_footer.webp);
-    position: absolute;
-    @include resize(top, -200,-160);
-    @include resize(left, 0);
-    z-index: -1;
-  }
-
+ 
   &__links {
     display: flex;
     width: 100%;

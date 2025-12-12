@@ -3,11 +3,19 @@ import VerticalStackCarousel from "@/components/VerticalStackCarousel/VerticalSt
 import CardDefault from "@/components/Card/CardDefault";
 import mokup from "public/mokup/mokupAcontecendo.json";
 import TextDefault from "@/components/TextDefault/TextDefault";
+import ImgDefault from "@/components/ImgDefault/ImgDefault";
+
 import './Happening.scss';
 
 const isHappening: FC = () => {
   return (
     <section id="happening" className="happening">
+
+      <div className="happening__imgContainer">
+        <ImgDefault className="clube__img" mobileSrc="/images/em-breve-condor-mobile.webp" src="/images/em-breve-condor.webp" alt="imagem ilustrundo uma nova unidade" quality={75} />
+        <p className="happening__descriptionImage"><strong>Em breve,</strong><br /> novas unidades</p>
+      </div>
+
       <h2 className="happening__title">
         <TextDefault className="happening__title" text={mokup.heading} />
       </h2>

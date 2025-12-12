@@ -12,6 +12,7 @@ import Banner from "@/modules/Banner/Banner";
 
 import "./Home.scss";
 import Events from "@/modules/Events/Events";
+import Offers from "@/modules/Offers/Offers";
 
 interface HomeProps {
   data?: any;
@@ -28,6 +29,8 @@ const Home: FC<HomeProps> = async ({ data, page }) => {
       <Participate />
       <Podium />
       <Events />
+      <Clube />
+      <Offers />
       
       <div className="bg_natal">
         {flocoNeves.map((_, i) => (
@@ -38,7 +41,6 @@ const Home: FC<HomeProps> = async ({ data, page }) => {
         ))}
         
         <Happening />
-        <Clube />
         <Tips />
       </div>
 

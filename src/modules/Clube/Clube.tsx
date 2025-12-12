@@ -1,7 +1,8 @@
-import TextDefault from "@/components/TextDefault/TextDefault";
 import { FC } from "react";
+import TextDefault from "@/components/TextDefault/TextDefault";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import mokup from "public/mokup/mokupClube.json";
+
 import "./Clube.scss";
 
 const Clube: FC = () => {
