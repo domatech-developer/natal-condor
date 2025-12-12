@@ -24,13 +24,12 @@ const Offers: FC = () => {
 
             <ButtonLink
               linkProps={{
-                url: "#",
+                url: "https://campanha.condor.com.br/semanaspremiadas/?utm_term=condor%20online&utm_campaign=&utm_source=adwords&utm_medium=ppc&hsa_acc=7711719772&hsa_cam=22900441889&hsa_grp=181206479982&hsa_ad=769566957067&hsa_src=g&hsa_tgt=kwd-301576205251&hsa_kw=condor%20online&hsa_mt=b&hsa_net=adwords&hsa_ver=3&gad_source=1&gad_campaignid=22900441889&gbraid=0AAAAApnt4HPlWoQ24b5yl6h-9Iw_kgpR0&gclid=CjwKCAiAl-_JBhBjEiwAn3rN7fTViQjY4fwo_cz3x5_ttlDbvP3q_TCfSiGgd3eonRF_daM9Ed_jaxoCY4QQAvD_BwE",
                 title: "SAIBA MAIS",
                 target: "_blank",
                 name: "SAIBA MAIS"
               }}
               variant="primary"
-              className="offers__button"
             />
           </div>
         </div>

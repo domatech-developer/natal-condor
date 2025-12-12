@@ -5,7 +5,6 @@ import mokup from "public/mokup/mokupEvents.json";
 import CarouselDefault from "@/components/Carousel/CarouselDefault/CarouselDefault";
 import CarouselSlide from "@/components/Carousel/CarouselDefault/components/CarouselSlide";
 import TextDefault from "@/components/TextDefault/TextDefault";
-import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
 
 const Events: FC = () => {
   return (
@@ -31,7 +30,6 @@ const Events: FC = () => {
         </div>
         <div className="events__titleContainer">
           <h2 className="events__title">Eventos Natal Condor 2025</h2>
-          {/* <div className="events__description">Filtre por região</div> */}
         </div>
         <div className="events__carousel_container">
           <CarouselDefault
@@ -53,8 +51,8 @@ const Events: FC = () => {
                       </div>
 
                       <div className="events__contentCard">
-                        <p>{evento.descricao}</p>
-                        <p>{evento.local}</p>
+                        <TextDefault text={evento.titulo} />
+                        {/* <p>{evento.local}</p> */}
                       </div>
                     </div>
 
@@ -64,15 +62,6 @@ const Events: FC = () => {
 
                     <div className="events__hoverCard">
                       <TextDefault className="hoverCard_description" text={evento.descricaoHover} />
-                      <ButtonLink
-                        className="events__buttonCard"
-                        linkProps={{
-                          url: evento.button.url,
-                          title: evento.button.title,
-                          target: evento.button.target,
-                          name: evento.button.name
-                        }}
-                      />
                     </div>
                   </div>
                 </div>
