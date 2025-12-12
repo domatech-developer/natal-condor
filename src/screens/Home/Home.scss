@@ -11,8 +11,6 @@
         height: 100vh;
         &__light {
             position: relative;
-            // background: #d5d7b3;
-            // background: radial-gradient(circle, rgba(213, 215, 179, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
             background: #20170e;
         }
     }
@@ -28,6 +26,7 @@
             position: absolute;
             background: url("/assets/neve.webp") no-repeat center center;
             background-size: contain;
+            animation: floating 2s ease-in-out infinite;
             @include resize(left, 0);
             @include resize(top, 60);
             @include resize(width, 140);
