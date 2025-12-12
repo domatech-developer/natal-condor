@@ -25,7 +25,7 @@
     "nossasRedes": {
       "title": "Nossas redes",
       "icons": [
-        { "image": "/icons/Facebook.svg", "label": "Rede social Facebook", "url": "https://www.facebook.com/ClubeCondorOficial" },
+        { "image": "/icons/Facebook.svg", "label": "Rede social Facebook", "url": "https://www.facebook.com/RedeCondor" },
         { "image": "/icons/Instagram.svg", "label": "Rede social Instagram", "url": "https://www.instagram.com/redecondor/?hl=pt" },
         { "image": "/icons/TikTok.svg", "label": "Rede social TikTok", "url": "https://www.tiktok.com/@redecondor?lang=pt-BR" },
         { "image": "/icons/Youtube.svg", "label": "Rede social YouTube", "url": "https://www.youtube.com/user/redecondor" },
