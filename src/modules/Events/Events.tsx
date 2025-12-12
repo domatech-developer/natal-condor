@@ -11,14 +11,32 @@ const Events: FC = () => {
   return (
     <section id="events" className="events">
       <div className="events__container">
+        <div className="events__snowContainer">
+          <ImgDefault
+            className="events__snow"
+            src="/images/snow-flake-gold.webp"
+            alt="Flocos de neve decorativos"
+            quality={75}
+            skeleton={false}
+          />
+        </div>
+        <div className="events__snowContainer events__snowContainer--2">
+          <ImgDefault
+            className="events__snow"
+            src="/images/snow-flake-gold.webp"
+            alt="Flocos de neve decorativos"
+            quality={75}
+            skeleton={false}
+          />
+        </div>
         <div className="events__titleContainer">
           <h2 className="events__title">Eventos Natal Condor 2025</h2>
-          <div className="events__description">Filtre por região</div>
+          {/* <div className="events__description">Filtre por região</div> */}
         </div>
         <div className="events__carousel_container">
           <CarouselDefault
             options={{
-              align: "start",
+              align: "center",
               slidesToScroll: 1,
               dragFree: false,
               loop: true
@@ -61,6 +79,15 @@ const Events: FC = () => {
               </CarouselSlide>
             ))}
           </CarouselDefault>
+        </div>
+        <div className="events__starsContainer">
+          <ImgDefault
+            className="events__stars"
+            src="/images/golden-stars.webp"
+            alt="Estrelas douradas"
+            quality={75}
+            skeleton={false}
+          />
         </div>
       </div>
     </section>

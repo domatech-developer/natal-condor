@@ -1,27 +1,64 @@
-
 .events {
     position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: #20170e;
     @include resize(padding-top, 100, 70);
     @include resize(padding-bottom, 80, 40);
-    background: #20170E;
+
+    &__carousel_container {
+        position: relative;
+        width: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(32, 23, 14, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            @include resize(width, 56);
+            @include res-md {
+                display: none;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(-90deg, rgba(32, 23, 14, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            @include resize(width, 56);
+            @include res-md {
+                display: none;
+            }
+        }
+    }
 
     &__cardCarousel {
-        @include resize(width, 344, 100%);
-        @include resize(height, 446, 475);
         position: relative;
-        @include resize(padding, 23, 32);
-        background-image: url('/assets/background-card-effect.svg');
+        display: flex;
+        background-image: url("/assets/background-card-effect.svg");
         background-repeat: no-repeat;
         background-position: top;
+        aspect-ratio: 331 / 433.5;
         @include resize(background-size, cover, contain);
-
+        @include resize(width, 100%);
+        @include resize(height, auto);
+        @include resize(padding, 23, 32);
         &:hover {
             .events__hoverCard {
                 opacity: 1;
                 transform: translateY(0);
             }
+            .events__cardCarrosselContainer_image {
+                opacity: 0;
+                transition: 0.3s ease-in-out;
+            }
         }
-
         @include res-md {
             .events__hoverCard {
                 opacity: 1;
@@ -36,13 +73,19 @@
     &__cardCarrosselContainer {
         position: relative;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        transition: 0.3s ease-in-out;
     }
 
     &__hoverCard {
         position: absolute;
         bottom: 0;
         background: #364132;
-        @include resize(width,100%);
+        @include resize(width, 100%);
         @include resize(height, 180);
         display: flex;
         flex-direction: column;
@@ -54,14 +97,13 @@
         .hoverCard_description {
             display: block;
             word-break: break-all;
-            @include resize(font-size, 14);
-            @include resize(line-height, 20);
-            color: #FFFFFF;
-            font-weight: 400;
-            @include resize(max-height, 110);
+            color: rgba(255, 255, 255, 0.72);
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: rgba(255,255,255,0.4) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+            @include resize(font-size, 14);
+            @include resize(line-height, 22);
+            @include resize(max-height, 110);
 
             &::-webkit-scrollbar {
                 width: 4px;
@@ -72,23 +114,22 @@
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: rgba(255,255,255,0.4);
+                background-color: rgba(255, 255, 255, 0.4);
                 border-radius: 20px;
             }
 
             &::-webkit-scrollbar-thumb:hover {
-                background-color: rgba(255,255,255,0.6);
+                background-color: rgba(255, 255, 255, 0.6);
             }
         }
-
     }
 
     &__buttonCard {
         cursor: pointer;
         @include resize(width, 100%);
         @include resize(max-width, 100%);
-        background: #D10000;
-        @include resize(padding-inline, 32,16);
+        background: #d10000;
+        @include resize(padding-inline, 32, 16);
         @include resize(line-height, 20);
         @include resize(height, 40);
         @include resize(margin-top, 25, 16);
@@ -101,10 +142,10 @@
         z-index: 1;
 
         & span {
-        @include resize(font-size, 14);
-        @include resize(line-height, 20);
-        text-transform: uppercase;
-        font-weight: 500;
+            @include resize(font-size, 14);
+            @include resize(line-height, 20);
+            text-transform: uppercase;
+            font-weight: 500;
         }
 
         &::before,
@@ -114,7 +155,7 @@
             width: 30px;
             @include resize(height, 100%);
             display: block;
-            background-image: url('/assets/btn-hover.webp');
+            background-image: url("/assets/btn-hover.webp");
             background-repeat: no-repeat;
             background-position: bottom;
             transition: 0.3s ease-in-out;
@@ -144,7 +185,7 @@
 
     &__cardHeader {
         display: flex;
-        align-items: end;
+        align-items: baseline;
         @include resize(gap, 10);
         @include resize(padding-top, 10);
     }
@@ -158,16 +199,16 @@
         justify-content: space-between;
 
         @include res-small {
-        @include resize(margin-top, 40);
-
+            @include resize(margin-top, 40);
         }
     }
 
-    &__cardCarousel_time, &__contentCard {
+    &__cardCarousel_time,
+    &__contentCard {
         @include resize(font-size, 16, 14);
         @include resize(line-height, 32, 20);
         letter-spacing: -1px;
-        color: #FFFFFF;
+        color: #ffffff;
         font-weight: 400;
     }
 
@@ -204,8 +245,12 @@
     }
 
     .carouselDefault {
-        @include resize(--slide-size, 33%, 95%);
-        @include resize(--slide-spacing, 8);
+        @include resize(--slide-size, 31%, 95%);
+        @include resize(--slide-spacing, 16, 2);
+
+        &__viewport {
+            @include resize(padding-inline, 0, 16);
+        }
 
         .carouselDefault__button {
             max-width: 100%;
@@ -217,10 +262,16 @@
         }
 
         .carouselDefault__button--next {
-            @include resize(right, 0, 0);
+            @include resize(right, -64, 0);
         }
         .carouselDefault__button--prev {
-            @include resize(left, 0, 0);
+            @include resize(left, -64, 0);
+        }
+
+        &__dots {
+            @include res-md {
+                bottom: -8px;
+            }
         }
     }
     .podiumModalContent__description {
@@ -234,17 +285,16 @@
         display: flex;
         flex-direction: column;
         @include max-width(766);
+        @include resize(gap, 8);
         @include resize(margin-inline, auto);
         @include resize(margin-bottom, 40, 25);
-        @include resize(gap,8);
     }
 
     &__cardCarousel_dates {
+        font-weight: 700;
+        color: #ffe572;
         @include resize(font-size, 40, 24);
         @include resize(line-height, 50, 32);
-        font-weight: 700;
-       color: #FFE572;
-       display: flex;
     }
 
     &__title {
@@ -252,14 +302,16 @@
         @include resize(font-size, 40, 24);
         @include resize(line-height, 50, 32);
         font-weight: 700;
-        background: linear-gradient(180deg, #FFE572 15.91%, #FFD13C 57.73%, #FFE572 100%);
+        background: linear-gradient(180deg, #ffe572 15.91%, #ffd13c 57.73%, #ffe572 100%);
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        transform: translateY(-150px) scale(0.90);
-        transition-delay: .5s; 
+        transform: translateY(-150px) scale(0.9);
+        transition-delay: 0.5s;
         opacity: 0;
-        transition: opacity .6s ease .5s, transform .6s ease .5s;
+        transition:
+            opacity 0.6s ease 0.5s,
+            transform 0.6s ease 0.5s;
 
         @include res-md {
             transform: translateY(0) scale(1);
@@ -270,11 +322,13 @@
         text-align: center;
         @include resize(font-size, 18, 16);
         @include resize(line-height, 32, 24);
-        color: #FFFFFF;
+        color: #ffffff;
         font-weight: 400;
         transform: scale(0.95);
         transition-delay: 1.35s;
-        transition: opacity .4s ease 1.35s,transform .6s ease 1.35s;
+        transition:
+            opacity 0.4s ease 1.35s,
+            transform 0.6s ease 1.35s;
 
         @include res-md {
             transform: scale(1);
@@ -282,30 +336,68 @@
     }
 
     &__container {
-        @include resize(max-width, 1142, 100%);
-        @include resize(padding-inline, 0, 15);
-        margin-inline: auto;
+        @include resize(padding-inline, 112, 0);
+        @include resize(max-width, 1366, 100%);
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
+            z-index: -1;
             bottom: 0;
             right: 0;
-            @include resize(width, 289, 100%);
-            @include resize(height, 185, 99);
-             background-image: url('/assets/mais-matos-natalinos-3.webp');
+            background-image: url("/assets/mais-matos-natalinos-3.webp");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: right;
-            z-index: -1;
-
+            @include resize(width, 289, 100%);
+            @include resize(height, 185, 99);
             @include res-md {
                 display: none;
             }
         }
     }
+    &__snowContainer {
+        position: absolute;
+        z-index: 2;
+        transform: rotate(-27.639deg);
+        aspect-ratio: 79/80;
+        animation: floating 2s ease-in-out infinite;
+        @include resize(width, 79);
+        @include resize(height, 80);
+        @include resize(top, 128);
+        @include resize(left, 88);
+        &--2 {
+            top: unset;
+            left: unset;
+            animation-delay: 1s;
+            @include resize(bottom, 16);
+            @include resize(right, 112);
+        }
+        @include res-md {
+            display: none;
+        }
+    }
+    &__starsContainer {
+        position: absolute;
+        z-index: 2;
+        aspect-ratio: 83.567/102.333;
+        animation: floating 2s ease-in-out infinite;
+        @include resize(width, 83.567);
+        @include resize(height, 102.333);
+        @include resize(top, 128);
+        @include resize(right, 164);
+        @include res-md {
+            display: none;
+        }
+    }
+    &__snow,
+    &__stars {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        &.active {
+    &.active {
         .events__title {
             opacity: 1;
             transform: translateY(0) scale(1);
