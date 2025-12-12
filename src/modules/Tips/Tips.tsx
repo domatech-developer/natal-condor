@@ -4,6 +4,7 @@ import TextDefault from "@/components/TextDefault/TextDefault";
 import ImgDefault from "@/components/ImgDefault/ImgDefault";
 import CarouselDefault from "@/components/Carousel/CarouselDefault/CarouselDefault";
 import CarouselSlide from "@/components/Carousel/CarouselDefault/components/CarouselSlide";
+import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
 import mokup from "public/mokup/mokupTips.json";
 
 import "./Tips.scss";
@@ -24,6 +25,15 @@ const Tips: FC = () => {
                 text={mokup.description}
               />
             </div>
+            {/* <ButtonLink
+              className="prizes__button"
+              linkProps={{
+                url: mokup.button.url,
+                title: mokup.button.title,
+                target: mokup.button.target,
+                name: mokup.button.name
+              }}
+            /> */}
           </div>
         </div>
 
@@ -44,7 +54,6 @@ const Tips: FC = () => {
                       <h3 className="tips__cardCarousel_title">{card.title}</h3>
                       <div className="tips__cardCarousel_infos">
                         <p>{card.time}</p>
-                        <p>{card.date}</p>
                       </div>
                     </div>
                   </div>

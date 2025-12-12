@@ -3,29 +3,23 @@
   "description": "Cadastre-se gratuitamente e aproveite ofertas personalizadas, cashback em suas compras e sorteios especiais.",
   "button": {
     "label": "Acessar Blog",
-    "link": "/blog"
+    "url": "https://blog.condor.com.br",
+    "target": "_blank",
+    "title": "ACESSAR BLOG",
+    "name": "ACESSAR BLOG"
   },
   "carousel": [
     {
       "highlight": "Culinária",
-      "image": "/images/image-ilustrative.webp",
-      "title": "Receita Tradicional de Peru de Natal: Suculento e Dourado",
-      "time": "3 min",
-      "date": "Jun 27, 2025"
+      "image": "/images/receita-tradicional.webp",
+      "title": "Receita de Natal: Peru Assado com Recheio de Farofa de Bacon",
+      "time": "3 min"
     },
     {
       "highlight": "Culinária",
-      "image": "/images/image-ilustrative.webp",
-      "title": "Como Preparar Acompanhamentos Perfeitos para o Jantar de Natal",
-      "time": "4 min",
-      "date": "Jun 25, 2025"
-    },
-    {
-      "highlight": "Lifestyle",
-      "image": "/images/image-ilustrative.webp",
-      "title": "Ideias de Decoração para Deixar sua Ceia Ainda Mais Especial",
-      "time": "2 min",
-      "date": "Jun 20, 2025"
+      "image": "/images/decoracao-casa.webp",
+      "title": "Decore Sua Casa e Prepare as Surpresas para o Natal",
+      "time": "4 min"
     }
   ]
 }
