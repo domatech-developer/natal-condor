@@ -1,6 +1,5 @@
 import "./not-found.scss";
 import { Metadata } from "next";
-import { getGeneral } from "@/config/api";
 
 export const metadata: Metadata = {
   title: "Página não encontrada - Thermoplast",
@@ -8,10 +7,6 @@ export const metadata: Metadata = {
 };
 
 export default async function NotFound() {
-  const general = await getGeneral();
-
-  if (!general) return null;
-
   return (
     <main id="not-found">
       <></>
