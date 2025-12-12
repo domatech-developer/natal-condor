@@ -7,6 +7,66 @@
   @include resize(padding-top, 32, 16);
   @include resize(padding-bottom, 300, 200);
 
+  &__highlightCard {
+    background: linear-gradient(90deg, #FFE572 0%, #E3BE34 50%, #FFE572 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    @include resize(height, 28);
+    @include resize(width, 112);
+    @include resize(font-size, 12);
+    @include resize(margin-inline, auto);
+    color: #090909;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__ContainerCardImage {
+    @include resize(width, 100%);
+    @include resize(height, 220, 210);
+    @include resize(margin-top, 12);
+    @include resize(margin-bottom, 15);
+    overflow: hidden;
+    border-radius: 6px;
+  }
+
+  &__cardCarousel {
+    @include resize(width, 344, 100%);
+    @include resize(height, 446, 475);
+    position: relative;
+    @include resize(padding, 25, 32);
+    background-image: url('/assets/background-card-blog.webp');
+    background-repeat: no-repeat;
+    background-position: top;
+    @include resize(background-size, cover, contain);
+  }
+
+  &__contentCard {
+    @include resize(height, 120, auto);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__cardCarousel_infos {
+    position: absolute;
+    @include resize(bottom, 30);
+  }
+
+  &__cardCarousel_title {
+    color: #fff;
+    @include resize(font-size, 16);
+    @include resize(line-height, 130%);
+  }
+
+  &__cardCarousel_infos {
+    color: rgba(255, 255, 255, 0.722);
+    @include resize(font-size, 14);
+    @include resize(line-height, 130%);
+    font-weight: 400;
+  }
+
   &__container {
     width: 100%;
     display: flex;
@@ -26,6 +86,33 @@
 
     @include res-md {
       align-items: center;
+    }
+  }
+
+  &__ContainerCarrossel {
+    @include resize(width, 100%);
+    @include resize(max-width, 704);
+  }
+
+  .carouselDefault {
+    @include resize(--slide-size, 50%, 95%);
+    @include resize(--slide-spacing, 8);
+
+    .carouselDefault__button {
+      max-width: 100%;
+      border-color: #fff;
+
+      &:hover {
+        border-color: gold;
+        background: transparent;
+      }
+    }
+
+    .carouselDefault__button--next {
+      @include resize(right, -60, 0);
+    }
+    .carouselDefault__button--prev {
+      @include resize(left, -60, 0);
     }
   }
 

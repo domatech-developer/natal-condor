@@ -42,7 +42,7 @@ const Podium: FC = () => {
 
           {/* carrossel */}
           <div className="podium__carrossel_container">
-            <CarouselDefault   options={{
+            <CarouselDefault options={{
                 align: "start",
                 slidesToScroll: 1,
                 dragFree: false,

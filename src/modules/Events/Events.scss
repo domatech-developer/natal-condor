@@ -84,7 +84,7 @@
     }
 
     &__buttonCard {
-                cursor: pointer;
+        cursor: pointer;
         @include resize(width, 100%);
         @include resize(max-width, 100%);
         background: #D10000;

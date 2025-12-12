@@ -28,19 +28,24 @@ const Tips: FC = () => {
         </div>
 
         <div className="tips__ContainerCarrossel">
-          <CarouselDefault>
+          <CarouselDefault options={{
+              align: "start",
+              slidesToScroll: 1,
+              dragFree: false,
+              loop: true
+            }}>
             {mokup.carousel.map((card, index) => (
               <CarouselSlide key={index}>
                 <div className="tips__cardCarousel">
                   <div className="tips__cardCarousel__container">
-                    <span className="highlight">{card.highlight}</span>
-                    <div className="tips__cardCarousel__containerImage">
-                      <ImgDefault src={card.image} alt={card.title} quality={75} />
-                    </div>
-                    <h3 className="tips__cardCarousel_title">{card.title}</h3>
-                    <div className="tips__cardCarousel_infos">
-                      <p>{card.time}</p>
-                      <p>{card.date}</p>
+                    <span className="tips__highlightCard">{card.highlight}</span>
+                    <ImgDefault src={card.image} alt={card.title} quality={75} className="tips__ContainerCardImage" />
+                    <div className="tips__contentCard">
+                      <h3 className="tips__cardCarousel_title">{card.title}</h3>
+                      <div className="tips__cardCarousel_infos">
+                        <p>{card.time}</p>
+                        <p>{card.date}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
