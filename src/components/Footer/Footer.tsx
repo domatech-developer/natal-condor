@@ -29,7 +29,7 @@ const Footer: FC = () => {
               <ul>
                 {mock.sections.acontecendoNoCondor.links.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.url} role="tab" aria-selected="true">{item.label}</Link>
+                    <Link href={item.url} target="_blank" role="tab" aria-selected="true">{item.label}</Link>
                   </li>
                 ))}
               </ul>
