@@ -9,22 +9,30 @@ const Offers: FC = () => {
   return (
     <section id="offers" className="offers">
       <div className="offers__container">
+        <div className="offers__giftContainer">
+          <ImgDefault className="offers__gift" src={"/images/gift.webp"} alt={"Presentinho de natal"} quality={75} />
+        </div>
+        <div className="offers__giftContainer offers__giftContainer--2">
+          <ImgDefault className="offers__gift" src={"/images/gift.webp"} alt={"Presentinho de natal"} quality={75} />
+        </div>
+        <div className="offers__giftContainer offers__giftContainer--3">
+          <ImgDefault className="offers__gift" src={"/images/gift.webp"} alt={"Presentinho de natal"} quality={75} />
+        </div>
         <div className="offers__infoContainer">
           <div className="offers__textContainer">
             <h2 className="offers__text">Ofertas todos os dias, prêmios toda semana, o ano todo!</h2>
 
             <ButtonLink
               linkProps={{
-                url: '#',
-                title: 'SAIBA MAIS',
-                target: '_blank',
-                name: 'SAIBA MAIS'
+                url: "#",
+                title: "SAIBA MAIS",
+                target: "_blank",
+                name: "SAIBA MAIS"
               }}
               variant="primary"
               className="offers__button"
             />
           </div>
-
         </div>
 
         <div className="offers__imgContainer">
