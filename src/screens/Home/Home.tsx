@@ -1,3 +1,4 @@
+import "./Home.scss";
 import { FC } from "react";
 import MainDefault from "@/components/Main/Main";
 import StructureData from "@/components/SEO/StructureData/StructureData";
@@ -10,7 +11,6 @@ import Clube from "@/modules/Clube/Clube";
 import Tips from "@/modules/Tips/Tips";
 import Banner from "@/modules/Banner/Banner";
 
-import "./Home.scss";
 import Events from "@/modules/Events/Events";
 import Offers from "@/modules/Offers/Offers";
 
