@@ -108,11 +108,8 @@ $qtdCard: 3;
         @include resize(margin-bottom, 40, 25);
         @include resize(gap, 8);
     }
-
     &__title {
         text-align: center;
-        @include resize(font-size, 40, 24);
-        @include resize(line-height, 50, 32);
         font-weight: 700;
         background: linear-gradient(180deg, #ffe572 15.91%, #ffd13c 57.73%, #ffe572 100%);
         background-clip: text;
@@ -122,14 +119,14 @@ $qtdCard: 3;
         transition-delay: 0.5s;
         opacity: 0;
         transition:
-            opacity 0.6s ease 0.5s,
-            transform 0.6s ease 0.5s;
-
+            opacity 0.6s ease 0.35s,
+            transform 0.6s ease 0.35s;
+        @include resize(font-size, 40, 24);
+        @include resize(line-height, 50, 32);
         @include res-md {
             transform: translateY(0) scale(1);
         }
     }
-
     &__description {
         text-align: center;
         color: #ffffff;
@@ -137,8 +134,8 @@ $qtdCard: 3;
         transform: scale(0.95);
         transition-delay: 1.35s;
         transition:
-            opacity 0.4s ease 1.35s,
-            transform 0.6s ease 1.35s;
+            opacity 0.4s ease 1s,
+            transform 0.6s ease 1s;
         @include resize(font-size, 18, 16);
         @include resize(line-height, 32, 24);
         @include res-md {

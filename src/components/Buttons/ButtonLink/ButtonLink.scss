@@ -8,17 +8,52 @@
     @include resize(gap, $button-gap);
 
     &__primary {
-        background-color: $color-primary-200;
-        border: 1px solid $color-primary-200;
-        border-radius: $button-border-radius;
+        overflow: hidden;
+        position: relative;
+        background-color: #d10000;
+        border: 1px solid #d10000;
+        border-radius: 5px;
+        width: auto;
 
-        @include resize(padding-block, $button-padding-block);
-        @include resize(padding-inline, $button-padding-inline);
+        @include resize(padding-block, 14);
+        @include resize(padding-inline, 32);
 
         &:hover,
         &--active {
             background-color: $color-primary-100;
             border: 1px solid $color-primary-100;
+            &::before {
+                transform: rotate(-180deg) translateY(0);
+            }
+            &::after {
+                transform: translateY(0);
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            @include resize(height, 100%);
+            display: block;
+            background-image: url("/assets/btn-hover.webp");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            transition: 0.3s ease-in-out;
+            z-index: 0;
+            transform: translateY(50px);
+        }
+
+        &::after {
+            @include resize(bottom, 0);
+            @include resize(left, 0);
+        }
+
+        &::before {
+            @include resize(top, 0);
+            @include resize(right, 0);
+            transform: rotate(-180deg) translateY(50px);
         }
 
         &--disabled {
@@ -123,10 +158,11 @@
         transition: 270ms ease-in-out;
 
         &--primary {
-            color: $color-gray-500;
-            font-weight: 700;
-            @include resize(font-size, $b1-fs);
-            @include resize(line-height, $b1-lh);
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            @include resize(font-size, 14);
+            @include resize(line-height, 20);
         }
 
         &--secondary {
@@ -169,6 +205,4 @@
         outline: 2px solid $color-focus;
         outline-offset: 2px;
     }
-
-    
 }

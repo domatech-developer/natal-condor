@@ -44,70 +44,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 16px;
+    @include resize(gap, 24, 16);
     @include resize(height, 340, auto);
     @include resize(top, 200);
     @include resize(align-items, flex-start, center);
     @include resize(line-height, 100%);
     @include resize(text-align, left, center);
-  }
-
-  &__button {
-    cursor: pointer;
-    background: #d10000;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    @include resize(padding-inline, 32, 16);
-    @include resize(line-height, 20);
-    @include resize(max-width, 169, 100%);
-    @include resize(height, 40);
-    @include resize(margin-top, 25, 16);
-
-    & span {
-      @include resize(font-size, 14);
-      @include resize(line-height, 20);
-      text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 30px;
-      @include resize(height, 100%);
-      display: block;
-      background-image: url("/assets/btn-hover.webp");
-      background-repeat: no-repeat;
-      background-position: bottom;
-      transition: 0.3s ease-in-out;
-      z-index: 0;
-      transform: translateY(50px);
-    }
-
-    &::after {
-      @include resize(bottom, 0);
-      @include resize(left, 0);
-    }
-
-    &::before {
-      @include resize(top, 0);
-      @include resize(right, 0);
-      transform: rotate(-180deg) translateY(50px);
-    }
-
-    &:hover::after {
-      transform: translateY(0);
-    }
-
-    &:hover::before {
-      transform: rotate(-180deg) translateY(0);
-    }
   }
 
   &__textContainer {
@@ -176,7 +118,7 @@
     @include resize(gap, 0, 16);
     @include resize(width, 100%);
     @include resize(padding-top, 300, 0);
-    @include resize(padding-bottom, 24, 0);
+    @include resize(padding-bottom, 0);
     @include res-md {
       display: none;
     }

@@ -2,7 +2,7 @@
   "backgroundVideo": "/assets/background-luz-natal-condor.mp4",
   "title": "<span>Prêmios imperdíveis <br /> esperam você</span>. O próximo <br /> pode ser o seu.",
   "button": {
-    "url": "",
+    "url": "https://institucional.condor.com.br/ofertas/",
     "title": "Ver ofertas",
     "target": "_blank",
     "name": "Ver ofertas"

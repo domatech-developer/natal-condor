@@ -20,7 +20,6 @@ const Prizes: FC = () => {
           <div className="prizes__stickyContainer">
             <TextDefault className="prizes__text" text={mokup.title} />
             <ButtonLink
-              className="prizes__button"
               linkProps={{
                 url: mokup.button.url,
                 title: mokup.button.title,
