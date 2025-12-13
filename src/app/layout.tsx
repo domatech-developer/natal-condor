@@ -1,6 +1,7 @@
 import "@/scss/main.scss";
 import { Metadata } from "next";
 import { ModalProvider } from "@/provider/ModalProvider/ModalProvider";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import QueryProvider from "@/provider/QueryProvider/QueryProvider";
 import Footer from "@/components/Footer/Footer";
 
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const gtmId = process.env.NEXT_PUBLIC_GOOGLE_GTM || "GTM-WHQLMCSH";
+  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || "";
   return (
     <html lang="pt-Br">
       <body>
@@ -28,6 +31,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Footer />
           </ModalProvider>
         </QueryProvider>
+
+        <GoogleTagManager gtmId={gtmId} />
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   );
