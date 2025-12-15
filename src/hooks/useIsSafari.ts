@@ -6,8 +6,6 @@ export const useIsSafari = (): boolean => {
   const [isSafari, setIsSafari] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const ua: string = window.navigator.userAgent;
 
     const isSafariBrowser: boolean =
