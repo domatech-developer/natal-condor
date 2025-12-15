@@ -11,7 +11,7 @@ const HomeLightWrapper = ({ children }: HomeLightWrapperProps) => {
   const isSafari = useIsSafari();
 
   return (
-    <div className={`${isSafari ? "home__light" : "home__safari"}`}>
+    <div className={`${isSafari ? "home__safari" : "home__light" }`}>
       {children}
     </div>
   );

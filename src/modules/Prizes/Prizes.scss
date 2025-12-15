@@ -13,6 +13,23 @@
   min-height: 100vh;
   @include resize(padding-top, 0, 120);
   @include resize(padding-inline, 80, 16);
+  // background-image: url('/videos/gif-natal-condor-1280x258.gif'); 
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+
+  &__bgvideo::-webkit-media-controls {
+    display: none !important;
+  }
+
+  &__bgvideo::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+
+  &__bgvideo::-webkit-media-controls-play-button {
+    display: none !important;
+  }
+
   @include res-md {
     overflow: hidden;
     min-height: unset;

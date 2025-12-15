@@ -11,7 +11,7 @@ const Prizes: FC = () => {
   useShrinkOnScroll(".prizes__card");
   return (
     <section id="prizes" className="prizes">
-      <video className="prizes__bgvideo" autoPlay muted loop playsInline aria-hidden="true">
+      <video className="prizes__bgvideo" autoPlay muted loop playsInline webkit-playsinline="true" aria-hidden="true" tabIndex={-1}>
         <source src={mokup.backgroundVideo} type="video/mp4" />
       </video>
 
