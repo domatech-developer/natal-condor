@@ -20,6 +20,7 @@ COPY . .
 
 # Uncomment if you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PRIVATE_STANDALONE=true
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
@@ -39,9 +40,8 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
 
 # Writable cache dir
 ENV NEXT_CACHE_DIR=/tmp/next-cache
@@ -56,4 +56,4 @@ ENV PORT=3100
 EXPOSE 3100
 
 ENV HOSTNAME="0.0.0.0"
-CMD ["node_modules/.bin/next", "start", "-p", "3100"]
+CMD ["node", "server.js"]
