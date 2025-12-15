@@ -11,6 +11,8 @@ import Tips from "@/modules/Tips/Tips";
 import Banner from "@/modules/Banner/Banner";
 import Events from "@/modules/Events/Events";
 import Offers from "@/modules/Offers/Offers";
+import HomeLightWrapper from "@/components/HomeLightWrapper/HomeLightWrapper";
+
 
 interface HomeProps {
   data?: any;
@@ -22,10 +24,10 @@ const Home: FC<HomeProps> = async ({ data }) => {
     <MainDefault id="home">
       <StructureData data={data?.acf?.metaDados} />
       <Banner />
-      <div className="home__light">
+      <HomeLightWrapper>
         <Prizes />
         <Participate />
-      </div>
+      </HomeLightWrapper>
       <Podium />
       <Events />
       <Clube />
