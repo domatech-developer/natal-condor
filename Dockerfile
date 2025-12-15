@@ -20,7 +20,6 @@ COPY . .
 
 # Uncomment if you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
-ENV NEXT_PRIVATE_STANDALONE=true
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
@@ -35,14 +34,14 @@ WORKDIR /app
 ENV NODE_ENV=production
 # ENV NEXT_TELEMETRY_DISABLED=1
 ENV NEXT_PUBLIC_FRONT_END=http://localhost:3000/
-ENV NEXT_PRIVATE_STANDALONE=true
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
 
 # Writable cache dir
 ENV NEXT_CACHE_DIR=/tmp/next-cache
@@ -52,10 +51,9 @@ RUN mkdir -p /app/.next/cache/images /tmp/next-cache/images \
 
 USER nextjs
 
-# Default port, but overridable
-ARG APP_PORT=3000
-ENV PORT=$APP_PORT
-EXPOSE $APP_PORT
+# Porta interna fixa do container
+ENV PORT=3100
+EXPOSE 3100
 
 ENV HOSTNAME="0.0.0.0"
-CMD ["node", "server.js"]
+CMD ["node_modules/.bin/next", "start", "-p", "3100"]

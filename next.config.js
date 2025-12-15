@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  output: "standalone",
   experimental: {
     serverActions: {
       bodySizeLimit: "200mb"
     }
   },
-  allowedDevOrigins: ["local-origin.dev", "*.local-origin.dev"],
   sassOptions: {
     silenceDeprecations: ["legacy-js-api", "import", "global-builtin"],
     prependData: `
@@ -27,7 +26,9 @@ const nextConfig = {
         protocol: "http",
         hostname: "**"
       }
-    ]
+    ],
+    deviceSizes: [768, 1366, 1920],
+    qualities: [25, 50, 75, 100]
   },
 
   async headers() {
@@ -42,6 +43,19 @@ const nextConfig = {
           {
             key: "Cross-Origin-Embedder-Policy",
             value: "cross-origin"
+          },
+          // Disable browser caching
+          {
+            key: "Cache-Control",
+            value: "no-store, no-cache, must-revalidate, proxy-revalidate"
+          },
+          {
+            key: "Pragma",
+            value: "no-cache"
+          },
+          {
+            key: "Expires",
+            value: "0"
           }
         ]
       }
