@@ -15,7 +15,13 @@ export const metadata: Metadata = {
     url: "https://www.natal.condor.com.br",
     images: [{ url: "/icon.png", width: 582, height: 158, alt: "Natal Condor" }]
   },
-  icons: { icon: { sizes: "582x158", url: "/icon.png", type: "image/png" } }
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon/favicon-32x32.png", type: "image/png" },
+      { url: "/favicon/apple-touch-icon.png", rel: "apple-touch-icon" }
+    ]
+  }
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
